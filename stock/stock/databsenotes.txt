@@ -1,0 +1,5 @@
+1. create database in mysql xampp server
+2. name database as "easytrade"
+3. python manage.py makemigrations (django project terminal)
+4. python manage.py migrate (django project terminal)
+5. refresh mysql xampp server 

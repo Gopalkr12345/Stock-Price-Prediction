@@ -1,0 +1,414 @@
+{% extends 'base.html'%}
+{%block title %}Home{%endblock%}
+{%block css %}
+.card-header{
+    font-family: helvetica;
+    color: #4ababa;
+    animation: animate 1s ease-in-out infinite alternate;
+}
+@keyframes animate{
+    from {
+        text-shadow: 0 0 20px #289aab;
+    }
+    to {
+        text-shadow: 0 0 30px #289aab;
+        text-shadow: 0 0 10px #289aab;
+    }
+}
+{%endblock%}
+{%block body %}
+{% comment %} uncomment it while explaining project {% endcomment %}
+{% comment %} <script>
+    $(document).ready(function(){ 
+        setInterval (function(){
+            //$( "#here" ).load(window.location.href + " #here" );
+            $("#gainer").fadeOut('slow').load(" #gainer > *").fadeIn('slow');
+            $("#move").load(" #move > *");
+            $("#indicies").load(" #indicies > *");
+        },10000);
+    });
+</script> {% endcomment %}
+
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show mb-0" role="alert">
+    <strong>Message : </strong>{{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+<div class="container my-3" style="background-color: balck;">
+    <div class="ticker">
+        <div class="title">
+            <h5 class="text-center" style="font-weight:bold; font-size:30px; color:white;">Stock In News</h5>
+        </div>
+        <div class="news my-3" style=" display: flex;" id="move">
+            
+                
+                <div class="gainer mb-3" style="border: 5px solid yellow;
+    max-width:500px; margin-left:50px; border-radius:20px; padding:10px; font-style: italic;">
+        <marquee>
+                    {%for i in gainer|slice:":2" %}
+                        <h5 style="color: #06f906;"><i class="fa fa-arrow-circle-up" style="font-size:20px;color:#06f906; float:left;margin:0px;padding:0;"></i>{{ i.symbol }} | Price: {{ i.ltp }}₹ | Change: +{{ i.inrdiff}}₹ | % Change: +{{i.netPrice}}%</h5>  
+                    {% endfor %}
+        </marquee>
+                </div>
+                <div class="loser mb-3"style="border: 5px solid yellow;
+        margin-left: 20px; max-width:500px;border-radius:20px;padding:10px; font-style: italic;" >
+<marquee>
+                         {%for i in loser|slice:":2" %}
+                        <h5 style="color:red;"><i class="fa fa-arrow-circle-down" style="font-size:20px;color:red"></i>  {{ i.symbol }} | Price: {{ i.ltp }}₹ | Change: -{{ i.inrdiff}}₹ | % Change: {{i.netPrice}}%</h5>  
+                    {% endfor %}
+                    </marquee>
+                </div>
+                
+                
+            
+        </div>
+    </div>
+</div>
+
+{% comment %} <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
+    <strong>HELLO TRADER'S!! </strong>Trade With Trend
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div> {% endcomment %}
+
+{% load static %}
+<div class="container-fluid mt-3 px-4 ">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/img6.jpg' %}" class="d-block w-100" alt="..." height="400" width="300">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/b-4.jpeg' %}" class="d-block w-100 " alt="..." height="400" width="300">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/b-1.jpeg' %}" class="d-block w-100" alt="..." height="400" width="300">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+{% comment %} indicies {% endcomment %}
+<div class="card-deck mb-5 my-5 mr-0 ml-2 pl-5 pr-5 " id="indicies">
+
+<div class="card text-white mb-3" style="max-width: 18rem; background-color: #3A3B3C">
+ <div class="card-header text-center" ><h2>{{n50name}}</h2></div>
+   
+  <div class="card-body text-center">
+    <h3>{{n50lastPrice }}</h3>
+    <hr>
+    <h5>{{n50lastchange}}</h5>
+    <h5>{{n50lastpChange}}%</h5>
+  </div>
+</div>
+
+ <div class="card text-white mb-3" style="max-width: 18rem; background-color: #3A3B3C">
+  <div class="card-header text-center"><h2>{{nbname}}</h2></div>
+   
+  <div class="card-body text-center">
+    <h3>{{nblastPrice }}</h3>
+    <hr>
+    <h5>{{nblastchange}}</h5>
+    <h5>{{nblastpChange}}%</h5>
+  </div>
+</div>
+ <div class="card text-white mb-3" style="max-width: 18rem; background-color: #3A3B3C">
+  <div class="card-header text-center"><h2>{{niname}}</h2></div>
+   
+  <div class="card-body text-center">
+    <h3>{{nilastPrice }}</h3>
+    <hr>
+    <h5>{{nilastchange}}</h5>
+    <h5 id="ni">{{nilastpChange}}%</h5>
+  </div>
+</div>
+  <div class="card text-white mb-3" style="max-width: 18rem; background-color: #3A3B3C">
+   <div class="card-header text-center"><h2>{{nnname}}</h2></div>
+   
+  <div class="card-body text-center">
+    <h3>{{nnlastPrice }}</h3>
+    <hr>
+    <h5>{{nnlastchange}}</h5>
+    <h5>{{nnlastpChange}}%</h5>
+  </div>
+</div>
+</div>
+
+{% comment %} indicies {% endcomment %}
+
+
+<div class="card-deck mb-5 my-5 mr-0 ml-2 pl-5 pr-5" id="gainer">
+
+    {% comment %} GAINERS {% endcomment %}
+    <div class="card ml-5 mr-5 ">
+        <div class="card-body">
+            <h3 class="card-title text-center"
+                style="background: yellow;font-style: italic;fofont-weight:bold;font-size:40px;"><i
+                    class="fa fa-arrow-circle-up" style="font-size:48px;color:green"></i>Top Gainers</h3>
+            <hr>
+            <div class="form-inline mb-5 ">
+                {% if user.is_authenticated %}
+                <div class="row col-lg-12  justify-content-center">
+
+                    <table class="table table-striped table-bordered table-hover" style="color:yellow;">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Company Name</th>
+                                <th scope="col">₹ Last Price</th>
+                                <th scope="col">₹ Change</th>
+                                <th scope="col">% Change</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color:black;">
+                            <tr style="color:black;">
+                                {%for i in gainer %}
+                                <th scope="row" style="color:black;">{{ i.symbol }}</th>
+                                <td style="color:black;"> {{ i.ltp }}₹</td>
+                                <td style="color:black;"> +{{ i.inrdiff}}₹</td>
+                                <td style="color:black;">+{{ i.netPrice }}%</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+
+                </div>
+                <br>
+                {% else %}
+                <center>
+                    <h1 style="color : green;">Please login to use more features!!!</h1>
+                </center>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+    {% comment %} LOSERS {% endcomment %}
+    <div class="card ml-5 mr-5 ">
+        <div class="card-body">
+            <h3 class="card-title text-center"
+                style="background: yellow;font-style: italic;fofont-weight:bold;font-size:40px;"><i
+                    class="fa fa-arrow-circle-down" style="font-size:48px;color:red"></i>Top LOSERS</h3>
+            <hr>
+            <div class="form-inline mb-5 ">
+                {% if user.is_authenticated %}
+                <div class="row col-lg-12  justify-content-center">
+                    <table class="table table-striped table-bordered table-hover" style="color:yellow;">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Company Name</th>
+                                <th scope="col">₹ Last Price</th>
+                                <th scope="col">₹ Change</th>
+                                <th scope="col">% Change</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color:black;">
+                            <tr style="color:black;">
+                                {%for j in loser %}
+                                <th scope="row" style="color:black;">{{ j.symbol }}</th>
+                                <td style="color:black;"> {{ j.ltp }}₹</td>
+                                <td style="color:black;">-{{ j.inrdiff }}₹</td>
+                                <td style="color:black;">{{ j.netPrice }}%</td>
+                            </tr>
+
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                {% else %}
+                <center>
+                    <h1 style="color : red;">Please login to use more features!!!</h1>
+                </center>
+                {% endif %}
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="card-deck mb-5 my-5 mr-0 ml-2 pl-5 pr-5">
+        <div class="card ml-5 mr-5 ">
+            <img class="card-img-top" src="{% static 'img/card-1.jpg' %}" alt="Card image cap" height="300">
+            <div class="card-body">
+                <h3 class="card-title text-center" style="font-weight:bold;font-size:50px;">Search Stock</h3>
+                <div class="form-inline mb-5 ">
+                    {% if user.is_authenticated %}
+                    <div class="row col-lg-6 ml-5 justify-content-center">
+                        <form method="POST" action="{% url 'prices' %}">
+                            {% csrf_token %}
+                            <div class="text-center mr-0" style="margin-left:50px;">
+                                <label class="mb-2 " style="margin-left:50px;font-weight:bold; ">Enter Stock</label>
+                                <input class="form-control mr-sm-2 mb-2 ml-3 text-center" type="search"
+                                    placeholder="Get Stock Quote" aria-label="Search" name="ticker"
+                                    style="border:5px solid balck;">
+                                <br>
+                                <button class="btn btn-outline-success my-2 my-sm-0 mb-5 ml-5 text-center"
+                                    type="submit">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                    <br>
+                    {% else %}
+                    <center>
+                        <h1 style="color : blue;">Please login to use more features!!!</h1>
+                    </center>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="card ml-5 mr-5">
+            <img class="card-img-top" src="{% static 'img/card-2.jpg' %}" alt="Card image cap" height="300">
+            <div class="card-body">
+                <h3 class="card-title text-center" style="font-weight:bold;font-size:50px;">Watchlist</h3><br>
+                {% if user.is_authenticated %}
+                <p style="font-style: italic;font-size:20px; text-align:center">Click below to make your Watchlist</p>
+                <div class="text-center">
+                    <a href="{% url 'add_stock' %}" class="btn btn-outline-success mb-2 mt-2"
+                        style="text-align:center;">Add
+                        Stock</a>
+                </div>
+                <!-- <a href="{% url 'delete_stock' %}" class="btn btn-danger">Delete Stock</a> -->
+            </div>
+            <br>
+            {% else %}
+            <center>
+                <h1 style="color : blue;">Please login to use more features!!!</h1>
+            </center>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<div class="card-deck mb-5 my-5 mr-0 ml-2 pl-5 pr-5">
+    <div class="card ml-5 mr-5 ">
+        <img class="card-img-top" src="{% static 'img/card3.png' %}" alt="Card image cap" height="300">
+        <div class="card-body">
+            <h3 class="card-title text-center" style="font-weight:bold;font-size:40px;">Monthly Performance</h3><Br>
+            <div class="form-inline mb-5 ">
+                {% if user.is_authenticated %}
+                <div class="row col-lg-12  justify-content-center">
+                    <p style="font-style: italic;font-size:20px; text-align:center">Wanna check if your stock is gonna
+                        perform this month??<br>Have a look here..</p>
+                    <div class="text-center">
+                        <a href="/desc"
+                            class="btn btn-outline-success  mt-2" style="text-align:center;">Check Performance</a>
+                    </div>
+                </div>
+                <br>
+                {% else %}
+                <center>
+                    <h1 style="color : blue;">Please login to use more features!!!</h1>
+                </center>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="card ml-5 mr-5">
+        <img class="card-img-top" src="{% static 'img/Nifty50PE.jpg' %}" alt="Card image cap" height="300">
+        <div class="card-body">
+            <h3 class="card-title text-center" style="font-weight:bold;font-size:50px;">HeatMap Nifty50</h3><br>
+            {% if user.is_authenticated %}
+            <p style="font-style: italic;font-size:20px; text-align:center">Click below to see HeatMap of NIFTY50</p>
+            <div class="text-center">
+                <a href="https://share.streamlit.io/atharva360/heatmap/heatmap.py" class="btn btn-outline-success  mt-2"
+                    style="text-align:center;">Check</a>
+            </div>
+            <!-- <a href="{% url 'delete_stock' %}" class="btn btn-danger">Delete Stock</a> -->
+        </div>
+        <br>
+        {% else %}
+        <center>
+            <h1 style="color : blue;">Please login to use more features!!!</h1>
+        </center>
+        {% endif %}
+    </div>
+</div>
+
+</div>
+
+
+
+
+<!-- <div class="row col-lg-12 mb-5 justify-content-center">
+    <form action="{% url 'prices' %}" class="form-inline my-2 my-lg-0" method="POST"> -->
+<!-- CSRF:Cross Site Request Forgery -->
+<!-- {% csrf_token %} -->
+<!-- <input class="form-control mr-sm-2" type="search" placeholder="Get Stock Quote" aria-label="Search" name="ticker">
+<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Stock Quote</button>
+</form>
+
+<li>
+    <a href="{% url 'add_stock' %}">Add Stock</a>
+</li>
+<li>
+    <a href="{% url 'delete_stock' %}">Delete Stock</a>
+</li>
+</div>
+ -->
+
+{% comment %} <div class="ml-auto form-inline mb-5 ">
+    {% if user.is_authenticated %}
+    <div class="row col-lg-6 mb-5 justify-content-center" style="margin-top:40px; margin-left:300px;">
+        <form method="POST" action="{% url 'prices' %}"
+            style="margin-top:-20px; background: white; padding: 20px; border: 5px solid white; border-radius: 30px; padding-left: 30px; padding-right: 30px;">
+            {% csrf_token %}
+            <label class="mb-2">Enter Stock Name: </label>
+            <input class="form-control mr-sm-2 mb-2" type="search" placeholder="Get Stock Quote" aria-label="Search"
+                name="ticker" style=" margin-left:180px;text-align:center; justify-content: center;">
+            <br>
+            <button class="btn btn-outline-success my-2 my-sm-0 mb-5" type="submit"
+                style="margin-bottom:5px; margin-left:250px;text-align:center; justify-content: center;">Search</button>
+        </form>
+
+        <a href="{% url 'add_stock' %}" class="btn btn-success mb-2 mt-2">Add Stock</a>
+        <!-- <a href="{% url 'delete_stock' %}" class="btn btn-danger">Delete Stock</a> -->
+    </div>
+    <br>
+    {% else %}
+    <center>
+        <h1 style="color : yellow;">Please login to use more features!!!</h1>
+    </center>
+    {% endif %}
+</div> {% endcomment %}
+
+
+{%endblock%}

@@ -1,0 +1,216 @@
+{% extends 'base2.html'%}
+{%block title%}The Stock Markets{%endblock%}
+{%block css%}
+h2{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : yellow;
+    font-family: Times New Roman, Times, serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+p{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+h3{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: Times New Roman, Times, serif;
+    text-decoration: underline;
+}
+
+ol{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+ul{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+table,td,th{
+    
+   margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    border: 1px solid white;
+    padding: 10px;
+    
+}
+ 
+{%endblock%}
+{%block body%}
+<h1 style="margin-top: 15px; margin-bottom:30px;text-align:center; color: yellow; font-family: Times New Roman, Times, serif; font-weight: bold;">The Stock Markets</h1>
+    <h2>4.1 – Overview</h2>
+<p>Having understood the IPO process and what really goes behind the company’s transition from primary to secondary market we are now set to explore the stock markets a step further.</p>
+<p>By virtue of being a public company, the company is now liable to disclose all information related to the company to the public. The shares of a public limited company are traded on the stock exchanges on a daily basis.</p>
+<p>There are few reasons why market participants trade stocks. We will explore these reasons in this chapter.</p>
+
+<h2>4.2 – What really is the stock market</h2>
+<p>Like we discussed in chapter 2, the stock market is an electronic market place. Buyers and sellers meet and trade their point of view.</p>
+<p>For example, consider the current situation of Infosys. At the time of writing this, Infosys is facing a succession issue, and most of its senior level management personnel are quitting the company for internal reasons. It seems like the leadership vacuum is weighing down the company’s reputation heavily. As a result, the stock price dropped to Rs.3,000 all the way from Rs.3,500. Whenever there are new reports regarding Infosys management change, the stock prices react to it.</p>
+<p>Assume there are two traders – T1 and T2.</p>
+<p>T1’s point of view on Infosys &#8211; The stock price is likely to go down further because the company will find it challenging to find a new CEO.</p>
+<p>If T1 trades as per his point of view, he should be a seller of the Infosys stock.</p>
+<p>T2, however views the same situation in a different light and therefore has a different point of view – According to him, the stock price of Infosys has over reacted to the succession issue and soon the company will find a great leader, after whose appointment the stock price will move upwards.</p>
+<p>If T2 trades as per his point of view, he should be a buyer of the Infosys stock.</p>
+<p>So at, Rs.3, 000 T1 will be a seller, and T2 will be a buyer in Infosys.</p>
+<p>Now both T1 and T2 will place orders to sell and buy the stocks respectively through their respective stock brokers. The stock broker, obviously routes it to the stock exchange.</p>
+<p>The stock exchange has to ensure that these two orders are matched, and the trade gets executed. This is the primary job of the stock market – to create a market place for the buyer and seller.</p>
+<p>The stock market is a place where market participants can access any publicly listed company and trade from their point of view, as long as there are other participants who have an opposing point of view. After all, different opinions are what make a market.</p>
+<h2>4.3 – What moves the stock?</h2>
+<p>Let us continue with the Infosys example to understand how stocks really move. Imagine you are a market participant tracking Infosys.</p>
+<p>It is 10:00 AM on 11<sup>th</sup> June 2014 ,and the price of Infosys is 3000. The management makes a statement to the press that they have managed to find a new CEO who is expected to steer the company to greater heights. They are confident on his capabilities and they are sure that the new CEO will deliver much more than what is expected out of him.</p>
+<p>Two questions –</p>
+<ol type="a">
+<li>How will the stock price of Infosys react to this news?</li>
+<li>If you were to place a trade on Infosys, what would it be? Would be a buy or a sell?</li>
+</ol>
+<p>The answer to the first question is quite simple, the stock price will move up.</p>
+<p>Infosys had a leadership issue, and the company has fixed it. When positive announcements are made market participants tend to buy the stock at any given price and this cascades into a stock price rally.</p>
+<p>Let me illustrate this further :</p>
+<table class="table table-dark" >
+<tbody>
+<tr>
+<th>Sl No</th>
+<th>Time</th>
+<th>Last Traded Price</th>
+<th>What price the seller wants</th>
+<th>What does the buyer do?</th>
+<th>New Last Trade Price</th>
+</tr>
+<tr>
+<td>01</td>
+<td>10:00</td>
+<td>3000</td>
+<td>3002</td>
+<td>He buys</td>
+<td>3002</td>
+</tr>
+<tr>
+<td>02</td>
+<td>10:01</td>
+<td>3002</td>
+<td>3006</td>
+<td>He buys</td>
+<td>3006</td>
+</tr>
+<tr>
+<td>03</td>
+<td>10:03</td>
+<td>3006</td>
+<td>3011</td>
+<td>He buys</td>
+<td>3011</td>
+</tr>
+<tr>
+<td>04</td>
+<td>10:05</td>
+<td>3011</td>
+<td>3016</td>
+<td>He buys</td>
+<td>3016</td>
+</tr>
+</tbody>
+</table>
+<p>Notice, whatever prices the seller wants the buyer is willing to pay for it. This buyer-seller reaction tends to push the share price higher.</p>
+<p>So as you can see, the stock price jumped 16 Rupees in a matter of 5 minutes. Though this is a fictional situation, it is a very realistic, and typical behavior of stocks. The stocks price tends to go up when the news is good or expected to be good.</p>
+<p>In this particular case, the stock moves up because of two reasons. One, the leadership issue has been fixed, and two, there is also an expectation that the new CEO will steer the company to greater heights.</p>
+<p>The answer to the second question is now quite simple; you buy Infosys stocks      considering the fact that there is good news surrounding the stock.</p>
+<p>Now, moving forward in the same day, at 12:30 PM ‘The National Association of Software &amp; Services company’, popularly abbreviated as NASSCOM makes a statement. For those who are not aware, NASSCOM is a trade association of Indian IT companies. NASSCOM is considered to be a very powerful organization and whatever they say has an impact on the IT industry.</p>
+<p>The NASSCOM makes a statement stating that the customer’s IT budget seems to have come down by 15%, and this could have an impact on the industry going forward.</p>
+<p>By 12:30 PM let us assume Infosys is trading at 3030. Few questions for you..</p>
+<ol type="a">
+<li>How does this new information impact Infosys?</li>
+<li>If you were to initiate a new trade with this information what would it be?</li>
+<li>What would happen to the other IT stocks in the market?</li>
+</ol>
+<p>The answers to the above questions are quite simple. Before we start answering these questions, let us analyze NASSCOM’s statement in a bit more detail.</p>
+<p>NASSCOM says that the customer’s IT budget is likely to shrink by 15%. This means the revenues and the profits of IT companies are most likely to go down soon. This is not great news for the IT industry.</p>
+<p>Let us now try and answer the above questions..</p>
+<ol type="a">
+<li>Infosys being a leading IT major in the country will react to this news. The reaction could be mixed one because earlier during the day there was good news specific to Infosys. However a 15% decline in revenue is a serious matter and hence Infosys stocks are likely to trade lower</li>
+<li>At 3030, if one were to initiate a new trade based on the new information, it would be a sell on Infosys</li>
+<li>The information released by NASSCOM is applicable to the entire IT stocks and not just Infosys. Hence all IT companies are likely to witness a selling pressure.</li>
+</ol>
+<p>So as you notice, market participants react to news and events and their reaction translates to price movements! This is what makes the stocks move.</p>
+<p>At this stage you may have a very practical and valid question brewing in your mind. You may be thinking what if there is no news today about a particular company? Will the stock price stay flat and not move at all?</p>
+<p>Well, the answer is both yes and no, and it really depends on the company in focus.</p>
+<p>For example let us assume there is absolutely no news concerning two different companies..</p>
+<ol type="1">
+<li>Reliance Industries Limited</li>
+<li>Shree Lakshmi Sugar Mills</li>
+</ol>
+<p>As we all know, Reliance is one the largest companies in the country and regardless of whether there is news or not, market participants would like to buy or sell the company’s shares and therefore the price moves constantly.</p>
+<p>The second company is a relatively unknown and therefore may not attract market participant’s attention as there is no news or event surrounding this company. Under such circumstances, the stock price may not move or even if it does it may be very marginal.</p>
+<p>To summarize, the price moves because of expectation of news and events. The news or events can be directly related to the company, industry or the economy as a whole. For instance the appointment of Narendra Modi as the Indian Prime Minister was perceived as positive news and therefore the whole stock market moved.</p>
+<p>In some cases there would be no news but still the price could move due to the demand and supply situation.</p>
+<h2>4.4 – How does the stock get traded?</h2>
+<p>You have decided to buy 200 shares of Infosys at 3030, and hold on to it for 1 year. How does it actually work? What is the exact process to buy it? What happens after you buy it?</p>
+<p>Luckily there are systems in place which are fairly well integrated.</p>
+<p>With your decision to buy Infosys, you need to login to your trading account (provided by your stock broker) and place an order to buy Infosys. Once you place an order, an order ticket gets generated containing the following details:</p>
+<ol type="a">
+<li>Details of your trading account through which you intend to buy Infosys shares – therefore your identity is revealed.</li>
+<li>The price at which you intend to buy Infosys</li>
+<li>The number of shares you intend to buy</li>
+</ol>
+<p>Before your broker transmits this order to the exchange he needs to ensure you have sufficient money to buy these shares. If yes, then this order ticket hits the stock exchange. Once the order hits the market the stock exchange (through their order matching algorithm) tries to find a seller who is willing to sell you 200 shares of Infosys at 3030.</p>
+<p>Now the seller could be 1 person willing to sell the entire 200 shares at 3030 or it could be 10 people selling 20 shares each or it could be 2 people selling 1 and 199 shares respectively. The permutation and combination does not really matter. From your perspective, all you need is 200 shares of Infosys at 3030 and you have placed an order for the same. The stock exchange ensures the shares are available to you as long as there are sellers in the market.</p>
+<p>Once the trade is executed, the shares will be electronically credited to your DEMAT account. Likewise the shares will be electronically debited from the sellers DEMAT account.</p>
+<h2>4.5 – What happens after you own a stock?</h2>
+<p>After you buy the shares, the shares will now reside in your DEMAT account. You are now a part owner of the company, to the extent of your share holding. To give you a perspective, if you own 200 shares of Infosys then you own 0.000035% of Infosys.</p>
+<p>By virtue of owning the shares you are entitled to few corporate benefits like dividends, stock split, bonus, rights issue, voting rights etc. We will explore all these shareholder privileges at a later stage.</p>
+<h2>4.6 – A note on holding period</h2>
+<p>Holding period is defined as the period during which you intend to hold the stock. You may be surprised to know that the holding period could be as short as few minutes to as long as ‘forever’. When the legendary investor Warren Buffet was asked what his favorite holding period was, he in fact replied ‘forever’.</p>
+<p>In the earlier example quoted in this chapter, we illustrated how Infosys stocks moved from 3000 to 3016 in a matter of 5 minutes. Well, this is not a bad return after all for a 5 Minute holding period! If you are satisfied with it you can very well close the trade and move on to find another opportunity. Just to remind you, this is very much possible in real markets. When things are hot, such moves are quite common.</p>
+<h2>4.7 – How to calculate returns?</h2>
+<p>Now, everything in markets boils down to one thing. Generating a reasonable rate of return!</p>
+<p>If your trade generates a good return all your past stock market sins are forgiven. This is what really matters.</p>
+<p>Returns are usually expressed in terms of annual yield. There are different kinds of returns that you need to be aware of. The following will give you a sense of what they are and how to calculate the same…</p>
+<p><em>Absolute Return</em> – This is return that your trade or investment has generated in absolute terms. It helps you answer this question – I bought Infosys at 3030 and sold it 3550. How much percentage return did I generate?</p>
+<p>The formula to calculate the same is [Ending Period Value / Starting Period Value – 1]*100</p>
+<p>i.e [3550/3030 -1] *100</p>
+<p>= 0.1716 * 100</p>
+<p>= 17.16%</p>
+<p>A 17.6% is not a bad return at all!</p>
+<p><em>Compounded Annual Growth Rate (CAGR) –</em> An absolute return can be misleading if you want to compare two investments. CAGR helps you answer this question &#8211; I bought Infosys at 3030 and held the stock for 2 years and sold it 3550. At what rate did my investment grow over the last two years?</p>
+<p>CAGR factors in the time component which we had ignored when we computed the absolute return.</p>
+<p>The formula to calculate CAGR is ..</p>
+<p><img loading="lazy" class="size-full wp-image-224 aligncenter" src="http://zerodha.com/varsity/wp-content/uploads/2014/08/CAGR.jpg" alt="CAGR" width="305" height="74" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/08/CAGR.jpg 305w, https://zerodha.com/varsity/wp-content/uploads/2014/08/CAGR-300x73.jpg 300w" sizes="(max-width: 305px) 100vw, 305px" /></p>
+<p>Applying this to answer the question..</p>
+<p>{[3550/3030]^(1/2) – 1} = 8.2%</p>
+<p>This means the investment grew at a rate of 8.2% for 2 years. Considering the fact that Indian fixed deposit market offers a return of close to 8.5% return with capital protection an 8.2% return suddenly looks a bit unattractive.</p>
+<p>So, always use CAGR when you want to check returns over multiple years. Use absolute return when your time frame is for a year or lesser.</p>
+<p>What if you have bought Infosys at 3030 and sold it at 3550 within 6 months? In that case you have generated 17.16% in 6 months which translates to 34.32% (17.16% * 2) for the year.</p>
+<p>So the point is, if you have to compare returns, its best done when the return is expressed on an annualized basis.</p>
+
+{%endblock%}

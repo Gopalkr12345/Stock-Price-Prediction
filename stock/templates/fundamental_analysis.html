@@ -1,0 +1,155 @@
+{% extends 'base2.html'%}
+{%block title %}Fundamental Analysis{%endblock%}
+{%block css %}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+{%endblock%}
+{%block body %} 
+{% load static %}
+<h1 style="margin-top: 15px; margin-bottom:30px;text-align:center; color:yellow; font-family: Times New Roman, Times, serif; font-weight: bold;">Fundamental Analysis</h1>
+
+<div class="card-group col-lg-12 " style="text-align: center;">
+  <div class="card mx-5">
+    <img src="{% static 'img/fund-1.png' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">1. Introduction to Fundamental Analysis</h5>
+      <p class="card-text">The chapter lays a foundation to Fundamental Analysis, which is a holistic approach to study and analyze a business. A fundamental perspective is important because the stock prices of a fundamentally ..</p>
+    </div>
+    <div class="card-footer">
+      <a href="/intro_fund_analy">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+  <div class="card mx-5">
+    <img src="{% static 'img/fund-2.jfif' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">2. Mindset of an Investor</h5>
+      <p class="card-text">A insightful look at the basics of Fundamental Analysis and how it can be broken down to Qualitative and Quantitative factors to study the intrinsic value of the stock. Also includes a precise underst ..</p>
+    </div>
+    <div class="card-footer">
+       <a href="/mindset_investor">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+</div>
+
+<div class="card-group col-lg-12" style="text-align: center; margin-top:20px;">
+  <div class="card mx-5">
+    <img src="{% static 'img/fund-3.jpg' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">3. How to read the Annual Report of a company</h5>
+      <p class="card-text">The chapter lays a foundation for understanding the basic structure of a typical annual report. It takes you through the various sections and helps you understand what to look for when glancing throug ..</p>
+    </div>
+    <div class="card-footer">
+      <a href="/read_annual_report">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+  <div class="card mx-5">
+    <img src="{% static 'img/fund-4.jfif' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">4. Understanding the P&L Statement (Part 1)</h5>
+      <p class="card-text">The chapter discusses the overall content and format of the Profit and Loss Statement. In this chapter we specifically look into the revenue side of the profit and loss statement in detail by looking ..</p>
+    </div>
+    <div class="card-footer">
+       <a href="/understanding_p_l_1">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+</div>
+
+<div class="card-group col-lg-12" style="text-align: center; margin-top:20px;">
+  <div class="card mx-5">
+    <img src="{% static 'img/fund-4.jfif' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">5. Understanding the P&L Statement (Part 2)</h5>
+      <p class="card-text">The chapter explains the expense side of the Profit and Loss statement, its structure and content by looking into the annual report of a listed company. The accompanying notes/schedules are also analy ..</p>
+    </div>
+    <div class="card-footer">
+      <a href="/understanding_p_l_2">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+  <div class="card mx-5">
+    <img src="{% static 'img/fund-6.jfif' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">6. Understanding Balance Sheet Statement (Part 1)</h5>
+      <p class="card-text">The chapter discusses information about the typical structure of the Balance Sheet. In this chapter, we specifically looked into the liability side of the Balance Sheet ..</p>
+    </div>
+    <div class="card-footer">
+       <a href="/understanding_bal_sheet_1">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+</div>
+
+<div class="card-group col-lg-12" style="text-align: center; margin-top:20px;">
+  <div class="card mx-5">
+    <img src="{% static 'img/fund-6.jfif' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">7. Understanding Balance Sheet Statement (Part 2)</h5>
+      <p class="card-text">Continuing from the previous chapter, this chapter explains the concept of assets side of a typical Balance Sheet. ..</p>
+    </div>
+    <div class="card-footer">
+      <a href="/understanding_bal_sheet_2">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+  <div class="card mx-5">
+    <img src="{% static 'img/fund-8.jfif' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">8. The Cashflow Statement</h5>
+      <p class="card-text">The chapter discusses an outline on the key components of the cash flow statement, and their analysis. Also describes the connection between the Balance sheet, Profit and Loss statement and Cash flow ..</p>
+    </div>
+    <div class="card-footer">
+       <a href="/cashflow_statement">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+</div>
+{%endblock%}

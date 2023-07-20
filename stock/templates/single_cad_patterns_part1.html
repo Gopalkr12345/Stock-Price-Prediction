@@ -1,0 +1,138 @@
+{% extends 'base2.html'%}
+{%block title%}Single Candlesticks Pattern (Part 1){%endblock%}
+{%block css%}
+h2{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : yellow;
+    font-family: Times New Roman, Times, serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+p{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+h3{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: Times New Roman, Times, serif;
+    text-decoration: underline;
+}
+
+ol{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+ul{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+table,td,th{
+    
+   margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    border: 1px solid white;
+    padding: 10px;
+    
+}
+
+{%endblock%}
+{%block body%}
+    <h1 style="margin-top: 15px; margin-bottom:30px;text-align:center; color: yellow; font-family: Times New Roman, Times, serif; font-weight: bold;">Single Candlesticks Pattern (Part 1)</h1>
+    <h2>5.1 – Overview</h2>
+<p>As the name suggests, a single candlestick pattern is formed by just one candle. So as you can imagine, the trading signal is generated based on 1 day’s trading action. The trades based on a single candlestick pattern can be extremely profitable provided the pattern has been identified and executed correctly.</p>
+<p>One needs to pay some attention to the length of the candle while trading based on candlestick patterns. The length signifies the range for the day. In general, the longer the candle, the more intense is the buying or selling activity. If the candles are short, it can be concluded that the trading action was subdued.</p>
+<p>The following picture gives a perspective on the long/short &#8211; bullish, and bearish candle.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-581" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch5-D1a.jpg" alt="M2-ch5-D1a" width="400" height="200" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch5-D1a.jpg 400w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch5-D1a-300x150.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<p>The trades have to be qualified based on the length of the candle as well. One should avoid trading based on subdued short candles. We will understand this perspective as and when we learn about specific patterns.</p>
+<h2>5.2 – The Marubozu</h2>
+<p>The Marubozu is the first single candlestick pattern that we will understand. The word Marubozu means “Bald” in Japanese. We will understand the context of the terminology soon. There are two types of marubozu &#8211; the bullish marubozu and the bearish marubozu.</p>
+<p>Before we proceed, let us lay down the three important rules about candlesticks. We looked at it in the previous chapter; I’ve reproduced the same for quick reference:</p>
+<ol>
+<li>Buy strength and sell weakness.</li>
+<li>Be flexible with patterns (verify and quantify)</li>
+<li>Look for the prior trend.</li>
+</ol>
+<p>Marubozu is probably the only candlestick pattern that violates rule number 3, i.e., looking for a prior trend. A Marubozu can appear anywhere in the chart irrespective of the prior trend; the trading implication remains the same.</p>
+<p>The textbook defines Marubozu as a candlestick with no upper and lower shadow (therefore appearing bald). A Marubozu has just the real body, as shown below. However, there are exceptions to this. We will look into these exceptions shortly.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-583" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch5-D2a.jpg" alt="M2-ch5-D2a" width="400" height="200" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch5-D2a.jpg 400w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch5-D2a-300x150.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<p>The red candle represents the bearish marubozu, and the blue represents the bullish marubozu.</p>
+<h2><img loading="lazy" class="alignleft size-full wp-image-585" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/bullish-marubuzo.png" alt="bullish-marubuzo" width="131" height="131" /></h2><h2>5.3 &#8211; Bullish Marubozu</h2>
+<p>The absence of the upper and lower shadow in a bullish marubozu implies that the low is equal to the open and the high is equal to the close. Hence whenever the <strong>Open = Low and High = close</strong>, a bullish marubozu is formed.</p>
+<p>A bullish marubozu indicates that there is so much buying interest in the stock that the market participants were willing to buy the stock at every price point during the day, so much so that the stock closed near its high point for the day. It does not matter what the prior trend has been, the action on the marubozu day suggests that the sentiment has changed and the stock is now bullish.</p>
+<p>The expectation is that with this sudden change in sentiment, there is a surge of bullishness, and this bullish sentiment will continue over the next few trading sessions. Hence a trader should look at buying opportunities with the occurrence of a bullish marubozu. The <strong>buying price</strong> should be around the closing price of the marubozu.</p>
+<p><img loading="lazy" class="aligncenter wp-image-533 size-full" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart1.jpg" alt="M2-Ch5-Chart1" width="624" height="280" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart1.jpg 1335w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart1-300x135.jpg 300w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart1-1024x460.jpg 1024w" sizes="(max-width: 624px) 100vw, 624px" /></p>
+<p>In the chart above (ACC Limited), the encircled candle is a bullish marubozu. Notice the bullish marubozu candle does not have a visible upper and a lower shadow. The OHLC data for the candle is: Open = 971.8, High = 1030.2, Low = 970.1, Close = 1028.4</p>
+<p>Please notice the textbook definition of a marubozu <strong>Open = Low, and High = Close</strong>. However, in reality, there is a minor variation to this definition. The price variation is not much when measured in percentage terms, for example, the variation between high and close is 1.8, which as a percentage of high is just 0.17%. <strong>This is where the 2<sup>nd</sup> rule applies – Be flexible, Quantify and Verify</strong>.</p>
+<p>With this occurrence of a marubozu the expectation has turned bullish, and hence one would be a buyer of the stock. The trade setup for this would be as follows:</p>
+<p>Buy Price = Around 1028.4 and Stoploss = 970.0</p>
+<p>As it is evident, candlestick patterns do not give us a target. However, we will address the issue of setting targets at a later stage in this module.</p>
+<p>Having decided to buy the stock, when do we actually buy the stock? The answer to this depends on your risk appetite. Let us assume two types of a trader with different risk profiles – the risk-taker and the risk-averse.</p>
+<p><strong>The risk-taker</strong> would buy the stock on the same day as the marubozu is being formed. However, the trader needs to validate the occurrence of a marubozu. Validating is quite simple. Indian markets close at 3:30 PM. So, around 3:20 PM one needs to check if the <strong>current market price (CMP) is approximately equal to the high price for the day, and the opening price of the day is approximately equal to the low price the day</strong>. If this condition is satisfied, you know the day is forming a marubozu, you can buy the stock around the closing price. It is also essential to note that the risk-taker is buying on a bullish/blue candle day, thereby following rule 1, i.e., buying on strength and selling on weakness.</p>
+<p><strong>The risk-averse</strong> trader would buy the stock on the next day, i.e. the day after the pattern has been formed. However, before buying the trader, ensure that the day is a bullish day to comply with rule number 1. This means the risk-averse buyer can buy the stock only around the close of the day. The disadvantage of buying the next day is that the buy price is way above the suggested buy price, and therefore the stoploss is quite deep. However, as a trade-off, the risk-averse trader is buying only after doubly confirming that the bullishness is indeed established.</p>
+<p>As per the ACC’s chart above, both the risk taker and the risk-averse would have been profitable in their trades.</p>
+<p>Here is another example (Asian Paints Ltd) where both the risk-taker, and the risk-averse trader would have been profitable.</p>
+<p><img loading="lazy" class="aligncenter wp-image-534 size-full" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart2.jpg" alt="M2-Ch5-Chart2" width="623" height="211" /></p>
+<p>Here is an example where the risk-averse trader would have benefited :</p>
+<p><img loading="lazy" class="size-full wp-image-535 aligncenter" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart3.jpg" alt="M2-Ch5-Chart3" width="624" height="181" /></p>
+<p>Notice in the chart above, a bullish marubozu has been encircled. The risk-taker would have initiated a trade to buy the stock on the same day around the close, only to book a loss on the next day. However, the risk-averse would have avoided buying the stock entirely because the next day happened to be a red candle day. Going by the rule, we should buy only on a blue candle day and sell on a red candle day.</p>
+<h2>5.4 – The Stoploss on Bullish Marubozu</h2>
+<p>What if after buying, the market reverses its direction and the trade goes wrong? Like I had mentioned earlier, candlestick patterns come with an inbuilt risk management mechanism. In case of a bullish marubozu, the low of the stock acts as a stoploss. So after you initiate a buy trade, if the markets move in the opposite direction, you should exit the stock if price breaches the low of the marubozu.</p>
+<p>Here is an example where the bullish marubozu qualified as a buy for both the risk-averse and the risk-taker. The OHLC is : O = 960.2, H = 988.6, L = 959.85, C = 988.5.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-536" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart4.jpg" alt="M2-Ch5-Chart4" width="621" height="277" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart4.jpg 621w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart4-300x134.jpg 300w" sizes="(max-width: 621px) 100vw, 621px" /></p>
+<p>But the pattern eventually failed, and one would have booked a loss. The stoploss for this trade would be the low of marubozu, i.e. 959.85.</p>
+<p>Booking a loss is a part of the game. Even a seasoned trader goes through this. However, the best part of following the candlestick is that the losses cannot run indefinitely. There is a clear agenda as to what price one has to get out of trade provided the trade starts to move in the opposite direction. In this particular case booking a loss would have been the most prudent thing to do as the stock continued to go down.</p>
+<p>Of course, there could be instances where the stoploss gets triggered, and you pull out of the trade. But the stock could reverse direction and start going up after you pulled out of the trade. But unfortunately, this is also a part of the game, and one cannot really help it. No matter what happens, the trader should stick to the rules and not find excuses to deviate from it.</p>
+<h2><img loading="lazy" class="alignleft size-full wp-image-587" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/bearish-marubuzo.png" alt="bearish-marubuzo" width="131" height="131" /></h2><h2>5.5 &#8211; Bearish Marubozu</h2>
+<p>Bearish Marubozu indicates extreme bearishness. Here the open is equal to the high and close the is equal to low. Open = High, and Close = Low.</p>
+<p>A bearish marubozu indicates that there is so much selling pressure in the stock that the market participants actually sold at every price point during the day, so much so that the stock closed near its low point of the day. It does not matter what the prior trend has been, the action on the marubozu day suggests that the sentiment has changed and the stock is now bearish.</p>
+<p>The expectation is that this sudden change in sentiment will be carried forward over the next few trading sessions, and hence one should look at shorting opportunities. The selling price should be around the closing price of the marubozu.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-537" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart5.jpg" alt="M2-Ch5-Chart5" width="624" height="261" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart5.jpg 624w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart5-300x125.jpg 300w" sizes="(max-width: 624px) 100vw, 624px" /></p>
+<p>In the chart above (BPCL Limited), the encircled candle indicates the presence of a bearish marubozu. Notice the candle does not have an upper and a lower shadow. The OHLC data for the candle is as follows:</p>
+<p>Open = 355.4, High = 356.0, Low = 341, Close = 341.7</p>
+<p>As we had discussed earlier, a minor variation between the OHLC figures leading to small upper and lower shadows is ok as long as it is within a reasonable limit.</p>
+<p>The trade on the bearish marubozu would be to short BPCL approximately at 341.7 with a stoploss at the high point of the candle. In this case, the stoploss price is 356.0. Of course, we still haven’t dealt with setting targets at this stage, and we will figure that out much later in this module.</p>
+<p>Remember this: Once a trade is initiated, you should hold on to it until either the target is hit or the stoploss is breached. If you attempt to do something else before any one of these event triggers, your trade could most likely go bust. So staying on the course of the plan is extremely crucial.</p>
+<p>Trade can be initiated based on the risk appetite of the person. The risk-taker can initiate a short trade on the same day around the closing. Of course, he has to make sure that the candle is forming a bearish marubozu. To do this at 3:20 PM, the trader must confirm if the open is approximately equal to the high and the current market price is equal to the low price. If the condition is validated, then it is a bearish marubozu, a short position can be initiated.</p>
+<p>If the trader is risk-averse, he can wait till the next day’s closing. The short trade will go through only by 3:20 PM next day after ensuring that the day is a red candle day. This is also to ensure that we comply with 1<sup>st</sup> rule – Buy strength, and Sell weakness.</p>
+<p>In the BPCL chart above, both risk taker and risk-averse would have been profitable.</p>
+<p>Here is another chart, Cipla Limited, where the bearish marubozu has been profitable for both risk-taker, and a risk-averse trader. Remember these are short term trades and one needs to be quick in booking profits.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-538" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart6.jpg" alt="M2-Ch5-Chart6" width="624" height="230" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart6.jpg 1315w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart6-300x110.jpg 300w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart6-1024x377.jpg 1024w" sizes="(max-width: 624px) 100vw, 624px" /></p>
+<p>Here is a chart showing a bearish marubozu pattern that would not have worked out for the risk-taker, but a risk-averse trader would have avoided initiating the trade, thanks to rule 1.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-539" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart7.jpg" alt="M2-Ch5-Chart7" width="624" height="227" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart7.jpg 624w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch5-Chart7-300x109.jpg 300w" sizes="(max-width: 624px) 100vw, 624px" /></p>
+<h2>5.6 – The trade trap</h2>
+<p>Earlier in this chapter, we did discuss the length of the candle. One should avoid trading during a minimal (below 1% range) or long candle (above 10% range).</p>
+<p>A small candle indicates subdued trading activity, and hence it would be difficult to identify the direction of the trade. On the other hand, a long candle indicates extreme activity. The problem with lengthy candles would be the placement of stoploss. The stoploss would be deep, and in case the trade goes wrong, the penalty for paying would be painful. For this reason, one should avoid trading on candles that are either too short or too long.</p>
+<hr />
+{%endblock%}

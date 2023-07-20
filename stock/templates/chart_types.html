@@ -1,0 +1,261 @@
+{% extends 'base2.html'%}
+{%block title%}Chart Types{%endblock%}
+{%block css%}
+h2{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : yellow;
+    font-family: Times New Roman, Times, serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+p{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+h3{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: Times New Roman, Times, serif;
+    text-decoration: underline;
+}
+
+ol{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+ul{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+table,td,th{
+    
+   margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    border: 1px solid white;
+    padding: 10px;
+    
+}
+
+{%endblock%}
+{%block body%}
+    <h1 style="margin-top: 15px; margin-bottom:30px;text-align:center; color: yellow; font-family: Times New Roman, Times, serif; font-weight: bold;">Chart Types</h1>
+    <h2>3.1– Overview</h2>
+<p>Having recognized that the Open (O), high (H), low (L), and close (C) serves as the best way to summarize the trading action for the given period, we need a charting technique that displays this information in the most comprehensible way. If not for a good charting technique, charts can get quite complex. Each trading day has four data points, ’ i.e. the OHLC. If we are looking at a 10-day chart, we need to visualize 40 data points (1-day x 4 data points per day). So you can imagine how complex it would be to visualize 6 months or a year’s data.</p>
+<p>As you may have guessed, the regular charts that we are generally used to &#8211; like the column chart, pie chart, area chart etc. do not work for technical analysis. The only exception to this is the line chart.</p>
+<p>The regular charts don’t work mainly because they display one data point at a given point in time. However, Technical Analysis requires four data points to be displayed at the same time.</p>
+<p>Below are some of the chart types:</p>
+<ol>
+<li>Line chart</li>
+<li>Bar Chart</li>
+<li>Japanese Candlestick</li>
+</ol>
+<p>This module&#8217;s focus will be on the Japanese Candlesticks; however, before we get to candlesticks, we will understand why we don’t use the line and bar chart.</p>
+<h2>3.2 – The Line and Bar chart</h2>
+<p>The line chart is the most basic chart type, and it uses only one data point to form the chart. When it comes to technical analysis, a line chart is formed by plotting a stock&#8217;s closing prices or an index. A dot is placed for each closing price, and a line then connects the various dots.</p>
+<p>If we are looking at 60-day data, then the line chart is formed by connecting the closing prices&#8217; dots for 60 days.</p>
+<p><img loading="lazy" class="size-full wp-image-472 aligncenter" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch3-Chart1.jpg" alt="M2-Ch3-Chart1" width="624" height="255" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch3-Chart1.jpg 624w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch3-Chart1-300x123.jpg 300w" sizes="(max-width: 624px) 100vw, 624px" /></p>
+<p>The line charts can be plotted for various time frames, namely monthly, weekly, hourly etc. So, if you wish to draw a weekly line chart, you can use weekly closing prices of securities and other time frames.</p>
+<p>The advantage of the line chart is its simplicity. With one glance, the trader can identify the general trend of security. However, the disadvantage of the line chart is also its simplicity. Besides giving the analysts a view on the trend, the line chart does not provide any additional detail. Plus the line chart takes into consideration only the closing prices ignoring the open, high and low. For this reason, traders prefer not to use the line charts.</p>
+<p><strong>The bar chart, on the other hand,</strong> is a bit more versatile. A bar chart displays all four price variables: open, high, low, and close. A bar has three components.</p>
+<ol>
+<li>The central line – The top of the bar indicates the highest price the security has reached. The bottom end of the bar indicates the lowest price for the same period.</li>
+<li>The left mark/tick – indicates the open.</li>
+<li>The right mark/tick – indicates the close.</li>
+</ol>
+<p>For example, assume the OHLC data for a stock as follows:</p>
+<p>Open – 65<br />
+High – 70<br />
+Low – 60<br />
+Close &#8211; 68</p>
+<p>For the above data, the bar chart would look like this:</p>
+<p><img loading="lazy" class="size-full wp-image-473 aligncenter" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-1.jpg" alt="M2-ch3-diagrams-1" width="400" height="199" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-1.jpg 400w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-1-300x149.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<p>As you can see, in a single bar, we can plot four different price points. If you wish to view 5 days chart, we will have 5 vertical bars as you would imagine. So on and so forth.</p>
+<p><img loading="lazy" class="size-full wp-image-475 aligncenter" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch3-Chart2.jpg" alt="M2-Ch3-Chart2" width="624" height="233" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch3-Chart2.jpg 1315w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch3-Chart2-300x112.jpg 300w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch3-Chart2-1024x382.jpg 1024w" sizes="(max-width: 624px) 100vw, 624px" /></p>
+<p>Note that the left and right mark on the bar chart varies based on how the market has moved for the given day.</p>
+<p>If the left mark, which represents the opening price, is lower than the right mark, it indicates that the close is higher than the open (close &gt; open), hence a positive day for the markets. For example consider this: O = 46, H = 51, L = 45, C = 49. To indicate it is a bullish day, the bar is represented in blue colour.</p>
+<p><img loading="lazy" class="size-full wp-image-478 aligncenter" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-2.jpg" alt="M2-ch3-diagrams-2" width="400" height="199" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-2.jpg 400w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-2-300x149.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<p>Likewise, if the left mark is higher than the right mark, it indicates that the close is lower than the open (close &lt;open), hence a negative day for markets. For example consider this: O = 74, H=76, L=70, C=71. To indicate it is a bearish day, the bar is represented in red colour.</p>
+<p><img loading="lazy" class="size-full wp-image-479 aligncenter" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-3.jpg" alt="M2-ch3-diagrams-3" width="400" height="199" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-3.jpg 400w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-3-300x149.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<p>The length of the central line indicates the range for the day. A range can be defined as the difference between the high and low. Longer the line, bigger the range, shorter the line, smaller is the range.</p>
+<p>While the bar chart displays all the four data points, it still lacks a visual appeal. This is probably the biggest disadvantage of a bar chart. It becomes tough to spot potential patterns brewing when one is looking at a bar chart. The complexity increases when a trader has to analyze multiple charts during the day.</p>
+<p>Hence, for this reason, the traders do not use bar charts. However, it is worth mentioning that there are traders who prefer to use bar charts. But if you are starting fresh, I would strongly recommend the use of Japanese Candlesticks. Candlesticks are the default option for the majority in the trading community.</p>
+<h2>3.3 – History of the Japanese Candlestick</h2>
+<p>Before we jump in, it is worth spending time to understand in brief the history of the Japanese Candlesticks. As the name suggests, the candlesticks originated from Japan. The earliest use of candlesticks dates back to the 18<sup>th</sup> century by a Japanese rice merchant named Homma Munehisa.</p>
+<p>Though the candlesticks have been in existence for a long time in Japan, and are probably the oldest form of price analysis, the western world traders were clueless about it. It is believed that sometime around 1980’s a trader named Steve Nison accidentally discovered candlesticks, and he introduced the methodology to the rest of the world. He authored the first-ever book on candlesticks titled “Japanese Candlestick Charting Techniques” which is still a favourite amongst many traders.</p>
+<p>Most of the candlesticks pattern still retains the Japanese names; thus giving an oriental feel to technical analysis.</p>
+<h2>3.4 – Candlestick Anatomy</h2>
+<p>While in a bar chart the open and the close prices are shown by a tick on the left and the right sides of the bar respectively, however in a candlestick the open and close prices are displayed by a rectangular body.</p>
+<p>In a candlestick chart, candles can be classified as a bullish or bearish candle usually represented by blue/green/white and red/black candles. Needless to say, the colours can be customized to any colour of your choice; the technical analysis software allows you to do this. This module has opted for the blue and red combination to represent bullish and bearish candles, respectively.</p>
+<p>Let us look at the <strong>bullish candle</strong>. The candlestick, like a bar chart, is made of 3 components.</p>
+<ol>
+<li>The Central real body – The real body, rectangular connects the opening and closing price.</li>
+<li>Upper shadow – Connects the high point to the close.</li>
+<li>Lower Shadow – Connects the low point to the open.</li>
+</ol>
+<p>Have a look at the image below to understand how a bullish candlestick is formed:</p>
+<p><img loading="lazy" class="size-full wp-image-509 aligncenter" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-41.jpg" alt="M2-ch3-diagrams-4" width="400" height="199" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-41.jpg 400w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-41-300x149.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<p>This is best understood with an example. Let us assume the prices as follows.</p>
+<p>Open = 62<br />
+High = 70<br />
+Low = 58<br />
+Close = 67</p>
+<p><img loading="lazy" class="size-full wp-image-482 aligncenter" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-5.jpg" alt="M2-ch3-diagrams-5" width="400" height="199" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-5.jpg 400w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-5-300x149.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<p>Likewise, the bearish candle also has 3 components:</p>
+<ol>
+<li>The Central real body – The real body, rectangular which connects the opening and closing price. However, the opening is at the top end, and the closing is at the rectangle&#8217;s bottom end.</li>
+<li>Upper shadow – Connects the high point to the open.</li>
+<li>Lower Shadow – Connects the Low point to the close.</li>
+</ol>
+<p>This is how a bearish candle would look like:</p>
+<p><img loading="lazy" class="size-full wp-image-510 aligncenter" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-61.jpg" alt="M2-ch3-diagrams-6" width="400" height="199" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-61.jpg 400w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-61-300x149.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<p>This is best understood with an example. Let us assume the prices as follows.</p>
+<p>Open = 456<br />
+High = 470<br />
+Low = 420<br />
+Close = 435</p>
+<p><img loading="lazy" class="size-full wp-image-484 aligncenter" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-7.jpg" alt="M2-ch3-diagrams-7" width="400" height="199" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-7.jpg 400w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-ch3-diagrams-7-300x149.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<p>Here is a little exercise to help you understand the candlestick pattern better. Try and plot the candlesticks for the given data.</p>
+<table class="table table-dark">
+<tbody>
+<tr>
+<th>Day</th>
+<th>Open</th>
+<th>High</th>
+<th>Low</th>
+<th>Close</th>
+</tr>
+<tr>
+<td>Day 1</td>
+<td>430</td>
+<td>444</td>
+<td>425</td>
+<td>438</td>
+</tr>
+<tr>
+<td>Day 2</td>
+<td>445</td>
+<td>455</td>
+<td>438</td>
+<td>450</td>
+</tr>
+<tr>
+<td>Day 3</td>
+<td>445</td>
+<td>455</td>
+<td>430</td>
+<td>437</td>
+</tr>
+</tbody>
+</table>
+<p>If you find any difficulty in doing this exercise, please ask your query in the comments at the end of this chapter.</p>
+<p>Once you internalize the way candlesticks are plotted, reading the candlesticks to identify patterns becomes a lot easier.</p>
+<p>This is how the candlestick chart looks like if you were to plot them on a time series. The blue candle indicates bullishness and red indicates bearishness.</p>
+<p><img loading="lazy" class="size-full wp-image-486 aligncenter" src="http://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch3-Chart3.jpg" alt="M2-Ch3-Chart3" width="624" height="222" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch3-Chart3.jpg 1319w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch3-Chart3-300x107.jpg 300w, https://zerodha.com/varsity/wp-content/uploads/2014/09/M2-Ch3-Chart3-1024x365.jpg 1024w" sizes="(max-width: 624px) 100vw, 624px" /></p>
+<p>Also note, a long-bodied candle depicts strong buying or selling activity. A short-bodied candle depicts less trading activity and hence less price movement.</p>
+<p>To sum up, candlesticks are easier to interpret in comparison to the bar chart. Candlesticks help you quickly visualize the relationship between the open and close and the high and low price points.</p>
+<h2>3.5 – A note on time frames</h2>
+<p>A time frame is defined as the time duration during which one chooses to study a particular chart. Some of the popular time frames that technical analysts use are:</p>
+<ul>
+<li>Monthly Charts</li>
+<li>Weekly charts</li>
+<li>Daily or End of day charts</li>
+<li>Intraday charts – 30 Mins, 15 mins and 5 minutes</li>
+</ul>
+<p>One can customize the time frame as per their requirement. For example, a high-frequency trader may want to use a 1-minute chart instead of any other time frame.</p>
+<p>Here is a quick note on different types of time frames.</p>
+<table class="table table-dark">
+<tbody>
+<tr>
+<th>Time Frame</th>
+<th>Open</th>
+<th>High</th>
+<th>Low</th>
+<th>Close</th>
+<th>No of Candles</th>
+</tr>
+<tr>
+<td>Monthly</td>
+<td style="text-align: left;">The opening price on the first day of the month</td>
+<td style="text-align: left;">The highest price at which the stock traded during the entire month</td>
+<td style="text-align: left;">The lowest price at which the stock traded during the entire month</td>
+<td style="text-align: left;">The closing price on the last day of the month</td>
+<td style="text-align: left;">12 candles for the entire year</td>
+</tr>
+<tr>
+<td>Weekly</td>
+<td style="text-align: left;">Monday’s Opening Price</td>
+<td style="text-align: left;">The highest price at which the stock traded during the entire week</td>
+<td style="text-align: left;">The lowest price at which the stock traded during the entire week</td>
+<td style="text-align: left;">The closing price on Friday</td>
+<td style="text-align: left;">52 candles for the entire year</td>
+</tr>
+<tr>
+<td>Daily or EOD</td>
+<td style="text-align: left;">The opening price of the day</td>
+<td style="text-align: left;">The highest price at which the stock traded during the day</td>
+<td style="text-align: left;">The lowest price at which the stock traded during the entire day</td>
+<td style="text-align: left;">The closing price of the day</td>
+<td style="text-align: left;">One candle per day, 252 candles for the entire year</td>
+</tr>
+<tr>
+<td>Intraday 30 minutes</td>
+<td style="text-align: left;">The opening price at the beginning of the 1st minute</td>
+<td style="text-align: left;">The highest price at which the stock traded during the 30-minute duration</td>
+<td style="text-align: left;">The lowest price at which the stock traded during the 30-minute duration</td>
+<td style="text-align: left;">The closing price as on the 30th minute</td>
+<td style="text-align: left;">Approximately 12 candles per day</td>
+</tr>
+<tr>
+<td>Intraday 15 minutes</td>
+<td style="text-align: left;">The opening price at the beginning of the 1st minute</td>
+<td style="text-align: left;">The highest price at which the stock traded during the 15-minute duration</td>
+<td style="text-align: left;">The lowest price at which the stock traded during the 15-minute duration</td>
+<td style="text-align: left;">The closing price as on the 15th minute</td>
+<td style="text-align: left;">25 candles per day</td>
+</tr>
+<tr>
+<td>Intraday 5 minutes</td>
+<td style="text-align: left;">The opening price at the beginning of the 1st minute</td>
+<td style="text-align: left;">The highest price at which the stock traded during the 5-minute duration</td>
+<td style="text-align: left;">The lowest price at which the stock traded during the 5-minute duration</td>
+<td style="text-align: left;">The closing price as on the 5th minute</td>
+<td style="text-align: left;">75 candles per day</td>
+</tr>
+</tbody>
+</table>
+<p>As you can see from the table above, the number of candles (data points) increases when the time frame reduces. Based on the type of trader you are, you need to take a stand on the time frame you need.</p>
+<p>The data can either be information or noise. As a trader, you need to filter information from noise. For instance, a long term investor is better off looking at weekly or monthly charts as this would provide information. While on the other hand an intraday trader executing 1 or 2 trades per day is better off looking at the end of the day (EOD) or at best 15 mins charts. Likewise, for a high-frequency trader, 1-minute charts can convey a lot of information.</p>
+<p>So based on your stance as a trader, you need to choose a time frame. This is extremely crucial for your trading success because a successful trader looks for information and discards the noise.</p>
+<hr />
+{%endblock%}

@@ -1,0 +1,501 @@
+{% extends 'base2.html'%}
+{%block title%}Moving Averages{%endblock%}
+{%block css%}
+h2{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : yellow;
+    font-family: Times New Roman, Times, serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+p{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+h3{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: Times New Roman, Times, serif;
+    text-decoration: underline;
+}
+
+ol{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+ul{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+table,td,th{
+    
+   margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    border: 1px solid white;
+    padding: 10px;
+    
+}
+
+{%endblock%}
+{%block body%}
+    <h1 style="margin-top: 15px; margin-bottom:30px;text-align:center; color: yellow; font-family: Times New Roman, Times, serif; font-weight: bold;">Moving Averages</h1>
+    <p>We have all learnt about averages in school, moving average is just an extension of that. Moving averages are trend indicators and are frequently used due to their simplicity and effectiveness. Before we learn moving averages, let us have a quick recap on how averages are calculated.</p>
+
+<p>Assume 5 people are sitting on a nice sunny beach enjoying a nice chilled bottled beverage. The sun is so bright and nice that each one of them ends up drinking several bottles of the beverage. Assume the final count to be something like this:</p>
+<table class="table table-dark">
+<tbody>
+<tr>
+<th>Sl No</th>
+<th style="text-align: center;">Person</th>
+<th>No of Bottles</th>
+</tr>
+<tr>
+<td style="text-align: center;">01</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">07</td>
+</tr>
+<tr>
+<td style="text-align: center;">02</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">05</td>
+</tr>
+<tr>
+<td style="text-align: center;">03</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">06</td>
+</tr>
+<tr>
+<td style="text-align: center;">04</td>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">03</td>
+</tr>
+<tr>
+<td style="text-align: center;">05</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">08</td>
+</tr>
+<tr>
+<th colspan="2">Total # of bottles consumed</th>
+<th>29</th>
+</tr>
+</tbody>
+</table>
+<p>Assume a 6<sup>th</sup> person walks in to find out 29 bottles of beverages lying around them. He can quickly get a sense of ‘roughly’ how many bottles each of them consumed by dividing <strong>[the total number of bottles]</strong>  by <strong>[total number of people]</strong>.</p>
+<p>In this case, it would be:</p>
+<p>=29/5<br />
+=5.8 bottles per head.</p>
+<p>So, the average, in this case, tells us roughly how many bottles each person had consumed. Obviously, there would be few of them who had consumed above and below the average. For example, Person E drank 8 bottles of beverage, which is way above the average of 5.8 bottles. Likewise, person D drank just 3 bottles of beverage, which is way below the average of 5.8 bottles. Therefore the average is just an estimate, and one cannot expect it to be accurate.</p>
+<p>Extending the concept to stocks, here are the closing prices of ITC Limited for the last 5 trading sessions. The last 5-day average close would be calculated as follows:</p>
+<table class="table table-dark">
+<tbody>
+<tr>
+<th>Date</th>
+<th>Closing Price</th>
+</tr>
+<tr>
+<td>14/07/14</td>
+<td>344.95</td>
+</tr>
+<tr>
+<td>15/07/14</td>
+<td>342.35</td>
+</tr>
+<tr>
+<td>16/07/14</td>
+<td>344.20</td>
+</tr>
+<tr>
+<td>17/07/14</td>
+<td>344.25</td>
+</tr>
+<tr>
+<td>18/07/14</td>
+<td>344.0</td>
+</tr>
+<tr>
+<th>Total</th>
+<th>1719.75</th>
+</tr>
+</tbody>
+</table>
+<p>= 1719.75 / 5<br />
+= 343.95</p>
+<p>Hence the average closing price of ITC over the last 5 trading sessions is 343.95.</p>
+<h2>13.1 – The ‘moving’ average (also called the simple moving average)</h2>
+<p>Consider a situation where you want to calculate the average closing price of Marico Limited for the <strong>latest</strong> <strong>5 days</strong>. The data is as follows:</p>
+<table class="table table-dark">
+<tbody>
+<tr>
+<th>Date</th>
+<th>Closing Price</th>
+</tr>
+<tr>
+<td>21/07/14</td>
+<td>239.2</td>
+</tr>
+<tr>
+<td>22/07/14</td>
+<td>240.6</td>
+</tr>
+<tr>
+<td>23/07/14</td>
+<td>241.8</td>
+</tr>
+<tr>
+<td>24/07/14</td>
+<td>242.8</td>
+</tr>
+<tr>
+<td>25/07/14</td>
+<td>247.9</td>
+</tr>
+<tr>
+<th>Total</th>
+<th>1212.3</th>
+</tr>
+</tbody>
+</table>
+<p>= 1212.3/ 5<br />
+= 242.5</p>
+<p>Hence the average closing price of Marico over the last 5 trading sessions is 242.5</p>
+<p>Moving forward, the next day, i.e. 28<sup>th</sup> July (26<sup>th</sup> and 27<sup>th</sup> were Saturday and Sunday respectively) we have a new data point. This implies now the ‘new’ latest 5 days would be 22<sup>nd</sup>, 23<sup>rd</sup>, 24<sup>th</sup>, 25<sup>th</sup> and 28<sup>th</sup>. We will drop the data point belonging to the 21st as our objective is to calculate the latest 5-day average.</p>
+<table class="table table-dark">
+<tbody>
+<tr>
+<th>Date</th>
+<th>Closing Price</th>
+</tr>
+<tr>
+<td>22/07/14</td>
+<td>240.6</td>
+</tr>
+<tr>
+<td>23/07/14</td>
+<td>241.8</td>
+</tr>
+<tr>
+<td>24/07/14</td>
+<td>242.8</td>
+</tr>
+<tr>
+<td>25/07/14</td>
+<td>247.9</td>
+</tr>
+<tr>
+<td>28/07/14</td>
+<td>250.2</td>
+</tr>
+<tr>
+<th>Total</th>
+<th>1223.3</th>
+</tr>
+</tbody>
+</table>
+<p>= 1223.3/ 5<br />
+= 244.66</p>
+<p>Hence the average closing price of Marico over the last 5 trading sessions is 244.66</p>
+<p>As you can see, we have included the latest data (28<sup>th</sup> July) and discarded the oldest data (21<sup>st</sup> July) to calculate the 5-day average.  On 29<sup>th</sup>, we would include 29<sup>th</sup> data and exclude 22<sup>nd</sup> data, on 30<sup>th,</sup> we would include 30<sup>th</sup> data point but eliminate 23<sup>rd</sup> data, so on.</p>
+<p>We are essentially moving to the latest data point and discarding the oldest to calculate the latest 5-day average. Hence the name “moving” average!</p>
+<p>In the above example, the calculation of the moving average is based on the closing prices.  Sometimes, moving averages are also calculated using other parameters such as high, low, and open. However, the closing prices are used mostly by the traders and investors as it reflects the price at which the market finally settles down.</p>
+<p>Moving averages can be calculated for any time frame, from minutes, hours to years.  Any time frame can be selected from the charting software-based of your requirements.</p>
+<p>For those of you familiar with excel, here is a screenshot of how moving averages are calculated on MS Excel. Notice how the cell reference moves in the average formula, eliminating the oldest to include the latest data points.</p>
+<table class="table table-dark">
+<tbody>
+<tr>
+<th>Cell Ref</th>
+<th>Date</th>
+<th>Close Price</th>
+<th>5 Day Average</th>
+<th>Average Formula</th>
+</tr>
+<tr>
+<td>D3</td>
+<td>1-Jan-14</td>
+<td>1287.7</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D4</td>
+<td>2-Jan-14</td>
+<td>1279.25</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D5</td>
+<td>3-Jan-14</td>
+<td>1258.95</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D6</td>
+<td>6-Jan-14</td>
+<td>1249.7</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D7</td>
+<td>7-Jan-14</td>
+<td>1242.4</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D8</td>
+<td>8-Jan-14</td>
+<td>1268.75</td>
+<td>1263.6</td>
+<td>=AVERAGE(D3:D7)</td>
+</tr>
+<tr>
+<td>D9</td>
+<td>9-Jan-14</td>
+<td>1231.2</td>
+<td>1259.81</td>
+<td>=AVERAGE(D4:D8)</td>
+</tr>
+<tr>
+<td>D10</td>
+<td>10-Jan-14</td>
+<td>1201.75</td>
+<td>1250.2</td>
+<td>=AVERAGE(D5:D9)</td>
+</tr>
+<tr>
+<td>D11</td>
+<td>13-Jan-14</td>
+<td>1159.2</td>
+<td>1238.76</td>
+<td>=AVERAGE(D6:D10)</td>
+</tr>
+<tr>
+<td>D12</td>
+<td>14-Jan-14</td>
+<td>1157.25</td>
+<td>1220.66</td>
+<td>=AVERAGE(D7:D11)</td>
+</tr>
+<tr>
+<td>D13</td>
+<td>15-Jan-14</td>
+<td>1141.35</td>
+<td>1203.63</td>
+<td>=AVERAGE(D8:D12)</td>
+</tr>
+<tr>
+<td>D14</td>
+<td>16-Jan-14</td>
+<td>1152.5</td>
+<td>1178.15</td>
+<td>=AVERAGE(D9:D13)</td>
+</tr>
+<tr>
+<td>D15</td>
+<td>17-Jan-14</td>
+<td>1139.6</td>
+<td>1162.41</td>
+<td>=AVERAGE(D10:D14)</td>
+</tr>
+<tr>
+<td>D16</td>
+<td>20-Jan-14</td>
+<td>1140.6</td>
+<td>1149.98</td>
+<td>=AVERAGE(D11:D15)</td>
+</tr>
+<tr>
+<td>D17</td>
+<td>21-Jan-14</td>
+<td>1166.35</td>
+<td>1146.26</td>
+<td>=AVERAGE(D12:D16)</td>
+</tr>
+<tr>
+<td>D18</td>
+<td>22-Jan-14</td>
+<td>1165.4</td>
+<td>1148.08</td>
+<td>=AVERAGE(D13:D17)</td>
+</tr>
+<tr>
+<td>D19</td>
+<td>23-Jan-14</td>
+<td>1168.25</td>
+<td>1152.89</td>
+<td>=AVERAGE(D14:D18)</td>
+</tr>
+</tbody>
+</table>
+<p>As it is evident, the moving average changes as and when the closing price changes. As calculated above, a moving average is called a ‘Simple Moving Average’ (SMA). Since we are calculating it as per the latest 5 days of data, it is called referred to as 5 Day SMA.</p>
+<p>The averages for the 5 days (or it could be anything like 5, 10, 50, 100, 200 days) are then joined to form a smooth curving line known as the moving average line, and it continues to move as the time progresses.</p>
+<p>In the chart shown below, I have overlaid a 5 day SMA over ACC’s candlestick graph.</p>
+<p><strong><img loading="lazy" class="aligncenter size-full wp-image-798" src="http://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart1.jpg" alt="M2-Ch13-chart1" width="639" height="355" /></strong></p>
+<p>So what does a moving average indicator, and how does one use it?  There are many moving average applications, and shortly I will introduce a simple trading system based on moving averages. But before that, let us learn about the Exponential Moving Average.</p>
+<h2>13.2 – The exponential moving average</h2>
+<p>Consider the data points used in this example,</p>
+<table class="table table-dark">
+<tbody>
+<tr class="tableizer-firstrow">
+<th>Date</th>
+<th>Closing Price</th>
+</tr>
+<tr>
+<td>22/07/14</td>
+<td>240.6</td>
+</tr>
+<tr>
+<td>23/07/14</td>
+<td>241.8</td>
+</tr>
+<tr>
+<td>24/07/14</td>
+<td>242.8</td>
+</tr>
+<tr>
+<td>25/07/14</td>
+<td>247.9</td>
+</tr>
+<tr>
+<td>28/07/14</td>
+<td>250.2</td>
+</tr>
+<tr>
+<th>Total</th>
+<th>1214.5</th>
+</tr>
+</tbody>
+</table>
+<p>When one calculates the average across these numbers, there is an unstated assumption. We are essentially giving each data point equal importance. We are assuming that the data point on 22<sup>nd</sup> July is as important as the data point on 28<sup>th</sup> July. However, when it comes to markets, this may not always be true</p>
+<p>Remember the basic assumption of technical analysis &#8211; markets discount everything. This means the latest price you see (on 28<sup>th</sup> July) discounts all the known and unknown information. This also implies the price on 28<sup>th</sup> is more sacred than the price on 25<sup>th</sup>.</p>
+<p>One would like to assign weightage to data points based on the ‘newness’ of the data. Therefore the data point on 28<sup>th</sup> July gets the highest weightage, 25<sup>th</sup> July gets the next highest weightage, 24<sup>th</sup> July gets the 3<sup>rd</sup> highest, and so on.</p>
+<p>By doing so, I have essentially scaled the data points according to its newness – the latest data point gets the maximum attention, and the oldest data point gets the least attention.</p>
+<p>The average calculated on this scaled set of numbers gives us the Exponential Moving Average (EMA). I deliberately skipped the EMA calculation part, simply because most of the technical analysis software lets us drag and drop the EMA on prices. Hence we will focus on EMA’s application as opposed to its calculation.</p>
+<p>Here is a chart of Cipla Ltd. I have plotted a 50 day SMA (black) and a 50 day EMA (red) on Cipla’s closing prices. Though both SMA and EMA are for a 50 day period, you can notice that the EMA is more reactive to the prices and sticks closer to the price.</p>
+<p><strong><img loading="lazy" class="aligncenter size-full wp-image-799" src="http://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart2.jpg" alt="M2-Ch13-chart2" width="623" height="241" /></strong></p>
+<p>EMA is quicker to react to the current market price because EMA gives more importance to the most recent data points. This helps the trader to take quicker trading decisions. Hence, for this reason, traders prefer the use of the EMA over the SMA.</p>
+<h2>13.3 – A simple application of moving average</h2>
+<p>The moving average can be used to identify buying and selling opportunities with its own merit. When the stock price trades above its average price, it means the traders are willing to buy the stock at a price higher than its average price. This means the traders are optimistic about the stock price going higher. Therefore one should look at buying opportunities.</p>
+<p>Likewise, when the stock price trades below its average price, it means the traders are willing to sell the stock at a price lesser than its average price. This means the traders are pessimistic about the stock price movement. Therefore one should look at selling opportunities.</p>
+<p>We can develop a simple trading system based on these conclusions. A trading system can be defined as a set of rules that help you identify entry and exit points.</p>
+<p>We will now try and define one such trading system based on a 50-day exponential moving average. Remember a good trading system gives you a signal to enter a trade and a signal to close out the trade.  We can define the moving average trading system with the following rules:</p>
+<p><strong>Rule 1)</strong> Buy (go long) when the current market price turns greater than the 50 days EMA. Once you go long, you should stay invested till the necessary sell condition is satisfied.</p>
+<p><strong>Rule 2)</strong> Exit the long position (square off) when the current market price turns lesser than the 50 days EMA.</p>
+<p>Here is a chart that shows the application of the trading system on Ambuja cement. The black line on the price chart is the 50-day exponential moving average.</p>
+<p><strong><img loading="lazy" class="aligncenter size-full wp-image-800" src="http://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart3.jpg" alt="M2-Ch13-chart3" width="623" height="353" /></strong></p>
+<p>Starting from left, the first opportunity to buy originated at 165, highlighted on the charts as <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3775067706010219">[email&#160;protected]</a> Notice, at point B1, the stock price moved to a point higher than its 50 days EMA. Hence as per the trading system rule, we initiate a fresh long position.</p>
+<p>We stay invested by the trading system till we get an exit signal, which we eventually got at 187, marked as <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fcafcdbccdc4cbd2">[email&#160;protected]</a> This trade generated a profit of Rs.22 per share.</p>
+<p>The next signal to go long came at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="adef9fed9c9a95">[email&#160;protected]</a>, followed by a signal to square off at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="76254436474e4458">[email&#160;protected]</a> This trade was not as impressive as it resulted in a profit of just Rs.4. However, the last trade, <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="07453447363132">[email&#160;protected]</a>, and <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f6a5c5b6c4c7c3">[email&#160;protected]</a> were quite impressive, resulting in a profit of Rs.50.</p>
+<p>Here is a quick summary of these trades based on the trading system fared:</p>
+<table class="table table-dark">
+<tbody>
+<tr>
+<th>Sl No</th>
+<th>Buy Price</th>
+<th>Sell Price</th>
+<th>Gain/Loss</th>
+<th>% Return</th>
+</tr>
+<tr>
+<td>01</td>
+<td>165</td>
+<td>187</td>
+<td>22</td>
+<td>13%</td>
+</tr>
+<tr>
+<td>02</td>
+<td>178</td>
+<td>182</td>
+<td>04</td>
+<td>2.2%</td>
+</tr>
+<tr>
+<td>03</td>
+<td>165</td>
+<td>215</td>
+<td>50</td>
+<td>30%</td>
+</tr>
+</tbody>
+</table>
+<p>From the above table, it is obvious that the first and last trades were profitable, but the 2<sup>nd</sup> trade was not so profitable. If you inspect why this happened, it is evident that the stock was trending during the 1<sup>st</sup> and the 3<sup>rd</sup> trade, but during the 2<sup>nd</sup> trade, the stock moved sideways.</p>
+<p>This leads us to a significant conclusion about the moving averages. Moving averages works brilliantly when there is a trend and fails to perform when the stock moves sideways. This basically means the ‘Moving average’ in its simplest form is a trend following system.</p>
+<p>From my own personal experience of trading based on moving averages, I have noticed a few important characteristics:</p>
+<ol>
+<li>Moving averages gives you many trading signals (buy and sell) during a sideways market. Most of these signals result in marginal profits, if not for losses</li>
+<li>However usually one of those many trades results in a massive rally (like the <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="67255427565152">[email&#160;protected]</a> trade) leading to impressive gains</li>
+<li>It would be tough to segregate the big winner from the many small trades</li>
+<li>Hence the trader should not be selective in terms of selecting signals that moving average system suggest. In fact, the trader should trade all the trades that the system suggests</li>
+<li>Remember the losses are minimized in a moving average system, but that 1 big trade is good enough to compensate for all the losses and can give you sufficient profits</li>
+<li>The profit-making trade ensures you are in the trend as long as the trend lasts. Sometimes even upto several months. For this reason, MA can be used as a proxy for identifying long term investment ideas</li>
+<li>The key to MA trading system is to take all the trades and not be judgmental about the signals being generated by the system.</li>
+</ol>
+<p>Here is another example of BPCL, where the MA system suggested multiple trades during the sideways market; however, none of them was really profitable. However, the last trade resulted in a 67% profit in about 5 months.</p>
+<p><strong><img loading="lazy" class="aligncenter size-full wp-image-801" src="http://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart4.jpg" alt="M2-Ch13-chart4" width="624" height="228" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart4.jpg 1321w, https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart4-300x110.jpg 300w, https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart4-1024x376.jpg 1024w" sizes="(max-width: 624px) 100vw, 624px" /></strong></p>
+<h2>13.4 – Moving average crossover system</h2>
+<p>As its evident now the problem with the plain vanilla moving average system is that it generates far too many trading signals in a sideways market. A moving average crossover system is an improvisation over the plain vanilla moving average system. It helps the trader to take fewer trades in a sideways market.</p>
+<p>Instead of the usual single moving average in a MA crossover system, the trader combines two moving averages. This is usually referred to as ‘smoothing’.</p>
+<p>A typical example of this would be to combine a 50 day EMA, with a 100 day EMA. The shorter moving average (50 days in this case) is also referred to as the faster-moving average. The longer moving average (100 days moving average) is referred to as the slower moving average.</p>
+<p>The shorter moving average takes a lesser number of data points to calculate the average, and hence it tends to stick closer to the current market price and therefore reacts more quickly. A longer moving average takes more data points to calculate the average, and hence it tends to stay away from the current market price. Hence the reactions are slower.</p>
+<p>Here is the Bank of Baroda chart, showing you how the two moving averages stack up when loaded on a chart.</p>
+<p><strong><img loading="lazy" class="aligncenter size-full wp-image-802" src="http://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart5.jpg" alt="M2-Ch13-chart5" width="623" height="229" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart5.jpg 1322w, https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart5-300x110.jpg 300w, https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart5-1024x376.jpg 1024w" sizes="(max-width: 623px) 100vw, 623px" /></strong></p>
+<p>As you can see, the black 50 day EMA line is closer to the current market price (as it reacts faster) compared to the pink 100 days EMA (as it reacts slower).</p>
+<p>Traders have modified the plain vanilla MA system with the crossover system to smoothen out the entry and exit points. The trader gets far fewer signals in the process, but the chances of the trade being profitable are quite high.</p>
+<p>The entry and exit rules for the crossover system is as stated below:</p>
+<p><strong>Rule 1)</strong> – Buy (fresh long) when the short term moving averages turns greater than the long term moving average. Stay in the trade as long as this condition is satisfied</p>
+<p><strong>Rule 2)</strong> – Exit the long position (square off) when the short term moving average turns lesser than the longer-term moving average</p>
+<p>Let us apply the MA crossover system to the same BPCL example that we looked at. For ease of comparison, I have reproduced the BPCL’s chart with a single 50 day MA.</p>
+<p><strong><img loading="lazy" class="aligncenter size-full wp-image-803" src="http://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart6.jpg" alt="M2-Ch13-chart6" width="624" height="228" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart6.jpg 624w, https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart6-300x110.jpg 300w" sizes="(max-width: 624px) 100vw, 624px" /></strong></p>
+<p>Notice, when the markets were moving sideways, MA suggested at least 3 trading signals. However, the 4<sup>th</sup> trade was the winner which resulted in 67% profit.</p>
+<p>The chart shown below shows the application of a MA crossover system with 50 and 100 days EMA.</p>
+<p><strong><img loading="lazy" class="aligncenter size-full wp-image-804" src="http://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart7.jpg" alt="M2-Ch13-chart7" width="624" height="222" /></strong></p>
+<p>The black line plots the 50-day moving average and the pink line plots the 100-day moving average. As per the cross overrule, the signal to go long originates when the 50-day moving average (short term MA) crosses over the 100-day moving average (long term MA). The crossover point has been highlighted with an arrow. Please do notice how the crossover system keeps the trader away from the 3 unprofitable trades. This is the biggest advantage of a cross over system.</p>
+<p>A trader can use any combination to create a MA cross over system. Some of the popular combinations for a swing trader would be:</p>
+<ol type="a">
+<li>9 day EMA with 21 days EMA – use this for short term trades ( upto few trading session)</li>
+<li>25 day EMA with 50 days EMA – use this to identify medium-term trade (upto few weeks)</li>
+<li>50 day EMA with 100 Day EMA – use this to identify trades that lasts upto few months</li>
+<li>100 day EMA with 200 days EMA – use this to identify long term trades (investment opportunities), some of them can even last for over a year or more.</li>
+</ol>
+<p>Remember, longer the time frame, the lesser the number of trading signals.</p>
+<p>Here is an example of a 25 x 50 EMA crossover. Three trading signals qualify under the crossover rule.</p>
+<p><strong><img loading="lazy" class="aligncenter size-full wp-image-805" src="http://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart8.jpg" alt="M2-Ch13-chart8" width="623" height="228" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart8.jpg 1327w, https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart8-300x110.jpg 300w, https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch13-chart8-1024x374.jpg 1024w" sizes="(max-width: 623px) 100vw, 623px" /></strong></p>
+<p>Needless to say, the MA crossover system can also be applied for intraday trading. For instance, one could use the 15 x 30 minutes crossover to identify intraday opportunities. A more aggressive trader could use a 5 x 10-minute crossover.</p>
+<p>You may have heard this popular saying in the markets – “The trend is your, friend”. Well, the moving averages help you identify this friend.</p>
+<p>Remember, MA is a trend following system &#8211; as long as there is a trend, the moving averages work brilliantly. It does not matter which time frame you use or which cross over combination you use.</p>
+<hr />
+{%endblock%}

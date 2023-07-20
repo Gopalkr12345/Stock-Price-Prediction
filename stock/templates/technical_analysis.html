@@ -1,0 +1,224 @@
+{% extends 'base2.html'%}
+{%block title %}Technical Analysis{%endblock%}
+{%block css %}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+{%endblock%}
+{%block body %} 
+{% load static %}
+<h1 style="margin-top: 15px; margin-bottom:30px;text-align:center; color:yellow; font-family: Times New Roman, Times, serif; font-weight: bold;">Technical Analysis</h1>
+
+<div class="card-group col-lg-12 " style="text-align: center;">
+  <div class="card mx-5">
+    <img src="{% static 'img/tech-1.jpg' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">1. Background</h5>
+      <p class="card-text">Introduction to the concept of technical analysis and how it differs from Fundamental analysis. We also discuss the kind of return expectation one needs to set while trading based on Technical Analysi ..</p>
+    </div>
+    <div class="card-footer">
+      <a href="/background">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+  <div class="card mx-5">
+    <img src="{% static 'img/tech-2.png' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">2. Introducing Technical Analysis</h5>
+      <p class="card-text">This chapter explores the many characteristics of Technical Analysis including its adaptability to different asset classes, time frames etc. We also understand the need to summarize the Open, high, low ..</p>
+    </div>
+    <div class="card-footer">
+       <a href="/introducing_tech_analysis">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+</div>
+
+<div class="card-group col-lg-12" style="text-align: center; margin-top:20px;">
+  <div class="card mx-5">
+    <img src="{% static 'img/fund-3.png' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">3. The Chart Types</h5>
+      <p class="card-text">We explore the different chart types used in technical analysis along with its merits and de merits. Specifically we discuss the candlestick chart and why traders prefer candlesticks over bar charts. ..</p>
+    </div>
+    <div class="card-footer">
+      <a href="/chart_types">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+  <div class="card mx-5">
+    <img src="{% static 'img/tech-4.png' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">4. Getting Started with Candlesticks</h5>
+      <p class="card-text">Basic concepts on various candlestick patterns used by traders to make decisions on the market. We also discuss the basic classification of candlestick patterns ..</p>
+    </div>
+    <div class="card-footer">
+       <a href="/getting_started_candlesticks">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+</div>
+
+<div class="card-group col-lg-12" style="text-align: center; margin-top:20px;">
+  <div class="card mx-5">
+    <img src="{% static 'img/tech-5.jpg' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">5. Single Candlesticks Pattern (Part 1)</h5>
+      <p class="card-text">Detailed description on the Bullish and Bearish Marubozu with real examples from Indian markets. The chapter discusses how to identify and set up a trade based on Marubozu. ..</p>
+    </div>
+    <div class="card-footer">
+      <a href="/single_cad_patterns_part1">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+  <div class="card mx-5">
+    <img src="{% static 'img/tech-6.png' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">6. Single Candlesticks Pattern (Part 2)</h5>
+      <p class="card-text">The Doji and Spinning top candlestick patterns explained in detail and how these patterns play a key role in developing a view on markets. ..</p>
+    </div>
+    <div class="card-footer">
+       <a href="/single_cad_patterns_part2">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+</div>
+
+<div class="card-group col-lg-12" style="text-align: center; margin-top:20px;">
+  <div class="card mx-5">
+    <img src="{% static 'img/tech-6.png' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">7. Single Candlesticks Pattern (Part 3)</h5>
+      <p class="card-text">This chapter explores how to identify hammer and hanging man. We understand the thought process behind these patterns and how to setup trades based on these patterns. ..</p>
+    </div>
+    <div class="card-footer">
+      <a href="/single_cad_patterns_part3">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+  <div class="card mx-5">
+    <img src="{% static 'img/tech-8.png' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">8. The Support and Resistance</h5>
+      <p class="card-text">A detailed insight into Support and Resistance price levels, its relevance in technical analysis, its construction, drawbacks, and insights into setting price targets. ..</p>
+    </div>
+    <div class="card-footer">
+       <a href="/support_resistance">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+</div>
+
+<div class="card-group col-lg-12" style="text-align: center; margin-top:20px;">
+  <div class="card mx-5">
+    <img src="{% static 'img/tech-9.jfif' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">9. Volumes</h5>
+      <p class="card-text">This chapter outlines the importance of volume in technical analysis. Learn how to associate the volume and the price information to analyze the markets ...</p>
+    </div>
+    <div class="card-footer">
+      <a href="/volumes">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+  <div class="card mx-5">
+    <img src="{% static 'img/tech-10.jfif' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">10. Moving Averages</h5>
+      <p class="card-text">Moving average is a simple technical analysis indicator used to detect the price trend. Learn about the moving average and a how to set up a simple moving average trading system. ..</p>
+    </div>
+    <div class="card-footer">
+       <a href="/moving_averages">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+</div>
+
+<div class="card-group col-lg-12" style="text-align: center; margin-top:20px;">
+  <div class="card mx-5">
+    <img src="{% static 'img/tech-11.png' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">11. Indicatorss</h5>
+      <p class="card-text">Learn about the Relative strength indicator (RSI) and how it can be used to predict the short term movement in the market. Learn about the merits and drawbacks of RSI indicators. ..</p>
+    </div>
+    <div class="card-footer">
+      <a href="/indicators">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+  <div class="card mx-5">
+    <img src="{% static 'img/tech-12.jfif' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">12. The Dow Theory (Part 1)</h5>
+      <p class="card-text">A brief on the history of the Dow theory, its principles and the types of trends in Dow theory – Primary, Secondary and Minor and the inference of each trend type in relation to the markets. ..</p>
+    </div>
+    <div class="card-footer">
+       <a href="/dow_theory_1">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+</div>
+
+<div class="card-group col-lg-6" style="text-align: center; margin-top:20px;">
+  <div class="card mx-5">
+    <img src="{% static 'img/tech-12.jfif' %}" class="card-img-top" alt="..." height="300" width="100">
+    <div class="card-body">
+      <h5 class="card-title">13. The Dow Theory (Part 2)</h5>
+      <p class="card-text">In this chapter we look into the methods to identify trading ranges and flag formation. We also learn how to interpret the risk to reward ratio to make market entry and exit decisions. ..</p>
+    </div>
+    <div class="card-footer">
+      <a href="/dow_theory2">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+    </div>
+  </div>
+</div>
+{%endblock%}

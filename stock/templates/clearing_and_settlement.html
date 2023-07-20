@@ -1,0 +1,144 @@
+{% extends 'base2.html'%}
+{%block title%}Clearing and Settlement Process{%endblock%}
+{%block css%}
+h2{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : yellow;
+    font-family: Times New Roman, Times, serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+p{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+h3{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: Times New Roman, Times, serif;
+    text-decoration: underline;
+}
+
+ol{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+ul{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+table,td,th{
+    
+   margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    border: 1px solid white;
+    padding: 10px;
+    
+}
+{%endblock%}
+{%block body%}
+<h1 style="margin-top: 15px; margin-bottom:30px;text-align:center; color: yellow; font-family: Times New Roman, Times, serif; font-weight: bold;">Clearing and Settlement Process</h1>
+    <h2>6.1 – Overview</h2>
+<p>While clearing and settlement are quite theoretical, it is important to understand the mechanics behind it. As a trader or an investor, you need not actually worry about how the trades are cleared and settled as there are professional intermediaries to carry out this function seamlessly for you.</p>
+<p>However, the lack of understanding of the clearing and settlement process could leave a void, and would not give a sense of completeness to the learning process. Hence, for this reason, we will explore what happens behind the scene from the time you buy a stock to the time it hits your DEMAT account.</p>
+<p>We will keep this very practical with a clear emphasis on what you should really know as a market participant.</p>
+
+<h2>6.2 – What happens when you buy a stock?</h2>
+<p><em>Day 1 – The trade (T Day), Monday</em></p>
+<p>Assume on 23<sup>rd</sup> June 2014 (Monday) you buy 100 shares of Reliance Industries at Rs.1,000/- per share. The total buy value is Rs.100,000/- (100 * 1000). The day you make the transaction is referred to as the trade date, represented as ‘T Day’.</p>
+<p>By the end of trade day, your broker will debit Rs.100,000/- and the applicable charges towards your purchase. Assuming the trade is executed through Zerodha, the applicable charges would be as follows:</p>
+<table class="table table-dark">
+<tbody>
+<tr>
+<th>Sl No</th>
+<th>Chargeable Item</th>
+<th>Applicable Charges</th>
+<th>Amount</th>
+</tr>
+<tr>
+<td>01</td>
+<td>Brokerage</td>
+<td>Zero charges on Equity Delivery or 0.03% or Rs.20/- whichever is lower for intraday trades</td>
+<td>Zero</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Security Transaction Charges</td>
+<td>0.1% of the turnover</td>
+<td>100/-</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Transaction Charges</td>
+<td>0.00325% of the turnover</td>
+<td>3.25/-</td>
+</tr>
+<tr>
+<td>04</td>
+<td>GST</td>
+<td>18% of Brokerage + Transaction charges</td>
+<td>0.585/-</td>
+</tr>
+<tr>
+<td>07</td>
+<td>SEBI Charges</td>
+<td>Rs.10 per crore of transaction</td>
+<td>0.1/</td>
+</tr>
+<tr>
+<td style="text-align: center;" colspan="3"><strong>Total</strong></td>
+<td><strong>103.93/-</strong></td>
+</tr>
+</tbody>
+</table>
+<p>So an amount of Rs.100,000/- plus Rs.103.93/- (which includes all the applicable charges) totalling Rs.100,103.93/- will be debited from your trading account the day you make the transaction. Remember, the money goes out of your account, but the stock has not come into your DEMAT account yet.</p>
+<p>Also, on the same day, the broker generates a ‘contract note’ and sends you a copy. A contract note is like a bill generated detailing every transaction you made. This is an important document that is worth saving for future reference. A contract note typically shows a break up of all transactions done during the day along with the trade reference number. It also shows the breakup of charges charged by the broker.</p>
+<p><em>Day 2 – Trade Day + 1 (T+ day, Tuesday)</em></p>
+<p>The day after you made the transaction is called the T+1 day. On T+1 day, you can sell the stock that you purchased the previous day.  If you do so, you are basically making a quick trade called “Buy Today, Sell Tomorrow” (BTST) or “Acquire Today, Sell Tomorrow” (ATST). Remember the stock is not in your DEMAT account yet. Hence, there is a risk involved, and you could be in trouble for selling a stock that you don’t really own. This doesn’t mean, every time you make a BTST trade, you end up in trouble, but it does once in a way, especially when you trade B group and illiquid stocks. This happens a little convoluted, and we deliberately will not touch this topic now.</p>
+<p>If you start fresh in the markets, I would suggest you do not make BTST trades unless you understand the risk involved.</p>
+<p>From your perspective, nothing happens on T+1 day. However, in the background, the money required to purchase the shares is collected by the exchange and the exchange transaction charges and Security transaction tax.</p>
+<p><em>Day 3 – Trade Day + 2 (T+2 day, Wednesday)</em></p>
+<p>On day 3 or the T+2 day, around 11 AM shares are debited from the person who sold you the shares and credited to the brokerage with whom you are trading, who will in turn credit it to your DEMAT account by the end of the day. Similarly, money that was debited from you is credited to the person who sold the shares.<em> </em></p>
+<p>The shares will now start reflecting in the DEMAT account indicating that you own 100 shares of Reliance.</p>
+<p>So for all practical purposes, if you buy a share on day T Day, you can expect to receive the shares in your DEMAT account only by the end of T+2 day. The shares are available for a transaction on T+3day.</p>
+<h2>6.3 – What happens when you sell a stock?</h2>
+<p>The day you sell the stocks is again called the trading day, represented as ‘T Day’. The moment you sell the stock from your DEMAT account, the stock gets blocked. Before the T+2 day, the blocked shares are given to the exchange. On T+2 day you would receive the funds from the sale which will be credited to your trading account after deduction of all applicable charges.</p>
+<hr />
+
+					<div class="clear"> </div>
+				</div><!-- .text //-->
+			</div>
+		</div>
+	</section>
+{%endblock%}

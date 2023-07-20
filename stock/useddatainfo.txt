@@ -1,0 +1,6 @@
+1. Top gainer losers:- nsetools
+2. Search stock data:- nsepy
+3. candlestick:- yahoo
+4. heatmap:- jugaad_data
+5. portfolio:- nsepy
+6. prediction:- yahoo finance

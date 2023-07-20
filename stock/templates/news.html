@@ -1,0 +1,35 @@
+{% extends 'base2.html'%} {%block title %}News{%endblock%} 
+{%block css %} 
+label { display: inline-block; margin-bottom: .5rem; color: #fff; position: center; body{ background-color: white; } 
+
+{%endblock%} 
+{%block body %}
+<div class="jumbotron" style=" text-align: center;margin-top:10px; margin-bottom:20px; background-color: white;">
+    <h1 class="display-4">
+        Welcome to our Stock Market News</h1>
+    <p class="lead">Here some fresh news about stock Markets!</p>
+    </video>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for x in api.results %}
+        <div class="col-sm-6 d-flex mb-5">
+            <div class="card" >
+                <img class="card-img-top" src="{{ x.image_url }}">
+                <div class="card-body flex-fill">
+                    <h5 class="card-title ">{{ x.title }}</h5>
+                    <div class="ok mb-3" style="max-height: 200px; overflow:auto;">
+                        <p class="card-text " >{{ x.description }}</p>
+                    </div>
+                    <a href="{{ x.article_url }} " class="btn btn-secondary ">Read More...</a>
+                </div>
+            </div>
+            <br>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- {{ api.Data }} -->
+{% endblock %}

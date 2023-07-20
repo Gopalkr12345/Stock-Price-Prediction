@@ -1,0 +1,58 @@
+{% extends 'base2.html'%} {%block title %}Add Stock{%endblock%} 
+{%block css %} 
+
+.btn:hover{
+    background: transparent;
+    border: 2px solid #f9004d;
+    cursor: pointer;
+}
+#daba:hover{
+    color: red;
+    cursor: pointer;
+}
+{%endblock%} 
+{%block body %}
+<br>
+
+<h2 style="color: yellow; text-align:center;">Delete Stock...</h2>
+<br>
+{% if ticker %} 
+<div class="atharva" style="text-align: center; margin-left:300px; margin-right:300px;" >
+<table class="table table-striped table-bordered table-hover" style="color:yellow;">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Company Name</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody style="color:white;">
+        <tr style="color:white;">
+            {% for item in ticker %} 
+            <th scope="row" style="color:white;">{{ item }}</th>
+            <td style="color:white;"> <a href="{% url 'delete' item.id %}" id="daba">Delete Stock</a></td>
+        </tr>
+        {% endfor %}
+         {% else %}
+     You do not have any stocks... 
+     {% endif %} 
+    </tbody>
+</table>
+</div>
+{% endblock %}
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+{% comment %} {% block content %}
+<br>
+
+<h2>Delete Stock...</h2>
+
+{% if ticker %} {% for item in ticker %} {{ item }} - <a href="{% url 'delete' item.id %}">Delete Stock</a> <br> {% endfor %} {% else %} You do not have any stocks... {% endif %} {% endblock %} {% endcomment %}

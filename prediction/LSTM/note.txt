@@ -1,0 +1,4 @@
+to run LSTM prediction:-
+
+1. Open this folder in another terminal
+2. streamlit run app.py (run this command in terminal)

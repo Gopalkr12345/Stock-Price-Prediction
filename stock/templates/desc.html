@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Side Navigation Bar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <style>
+        @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+
+        body {
+           background-image: url('{% static 'img/desc2.jpg' %}');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .popup {
+            width: 350px;
+            height: 350px;
+            padding: 30px 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            box-sizing: border-box;
+            z-index: 2;
+            text-align: center;
+            opacity: 0;
+            top: -200%;
+            transform: translate(-50%, -50%) scale(0.5);
+            transition: opacity 300ms ease-in-out,
+                top 1000ms ease-in-out,
+                transform 1000ms ease-in-out;
+        }
+
+        .popup.active {
+            opacity: 1;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            transition: transform 300ms cubic-bezier(0.18, 0.89, 0.43, 1.19);
+        }
+
+        .popup .icon {
+            margin: 5px 0px;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #34f234;
+            text-align: center;
+            display: inline-block;
+            border-radius: 50%;
+            line-height: 60px;
+        }
+
+        .popup .icon i.fa {
+            font-size: 30px;
+            color: #34f234;
+        }
+
+        .popup .title {
+            margin: 5px 0px;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .popup .description {
+            color: #222;
+            font-size: 15px;
+            padding: 5px;
+        }
+
+        .popup .dismiss-btn {
+            margin-top: 15px;
+        }
+
+        .popup .dismiss-btn button {
+            padding: 10px 20px;
+            background: #111;
+            color: #f5f5f5;
+            border: 2px solid #111;
+            font-size: 16px;
+            font-weight: 600;
+            outline: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 300ms ease-in-out;
+        }
+
+        .popup .dismiss-btn button:hover {
+            color: black;
+            
+        }
+
+        .popup>div {
+            position: relative;
+            top: 10px;
+            opacity: 0;
+        }
+
+        .popup.active>div {
+            top: 0px;
+            opacity: 1;
+        }
+
+        .popup.active .icon {
+            transition: all 300ms ease-in-out 250ms;
+        }
+
+        .popup.active .title {
+            transition: all 300ms ease-in-out 300ms;
+        }
+
+        .popup.active .description {
+            transition: all 300ms ease-in-out 350ms;
+        }
+
+        .popup.active .dismiss-btn {
+            transition: all 300ms ease-in-out 400ms;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="popup center">
+        <div class="icon">
+            <i class="fa fa-check"></i>
+        </div>
+        <div class="title">
+            Disclaimer!!
+        </div>
+        <div class="description">
+             stock investments are subject to market risks, The past performance of the Stocks is not necessarily indicative of future performance of the Stocks.We will not be responsible for any loss to any person/entity caused by any short-coming, defect or inaccuracy inadvertently or otherwise crept in the EasyTrade site.
+        </div>
+        <div class="dismiss-btn">
+            <button id="dismiss-popup-btn" >
+               <a href="https://share.streamlit.io/atharva360/heatmap/monthprediction.py" style="color:white; text-decoration:none;"> Dismiss</a>
+            </button>
+        </div>
+    </div>
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(function open(event) {
+                document.getElementsByClassName("popup")[0].classList.add("active");
+            }, 1000)
+        });
+        // document.getElementById("open-popup-btn").addEventListener("click", function () {
+        //     document.getElementsByClassName("popup")[0].classList.add("active");
+        // });
+
+        document.getElementById("dismiss-popup-btn").addEventListener("click", function () {
+            document.getElementsByClassName("popup")[0].classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>

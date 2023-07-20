@@ -1,0 +1,295 @@
+{% extends 'base2.html'%}
+{%block title%}Volumes{%endblock%}
+{%block css%}
+h2{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : yellow;
+    font-family: Times New Roman, Times, serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+p{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+h3{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: Times New Roman, Times, serif;
+    text-decoration: underline;
+}
+
+ol{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+ul{
+    margin-top : 15px;
+    margin-bottom:30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align : left;
+    color : white;
+    font-family: calibri, Times New Roman, Times, serif;
+    font-size : 20px;
+}
+
+table,td,th{
+    
+   margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    border: 1px solid white;
+    padding: 10px;
+    
+}
+
+{%endblock%}
+{%block body%}
+    <h1 style="margin-top: 15px; margin-bottom:30px;text-align:center; color: yellow; font-family: Times New Roman, Times, serif; font-weight: bold;">Volumes</h1>
+    <p>Volume plays a very integral role in technical analysis as it helps us to confirm trends and patterns. Consider volumes as a means to gain insights into how other participants perceive the market.</p>
+
+<p>Volumes indicate how many shares are bought and sold over a given period of time. The more active the share, the higher would be its volume. For example, you decide to buy 100 shares of Amara Raja Batteries at 485, and I decide to sell 100 shares of Amara Raja Batteries at 485. There are a price and quantity match, which results in a trade. You and I together have created a volume of 100 shares. Many people tend to assume volume count as 200 (100 buys + 100 sells), which is not the right way to look at volumes.</p>
+<p>The following fictional example should help you understand how volumes add up on a typical trading day:</p>
+<table class="table table-dark">
+<tbody>
+<tr>
+<th>Sl No</th>
+<th>Time</th>
+<th>Buy Quantity</th>
+<th>Sell Quantity</th>
+<th>Price</th>
+<th>Volume</th>
+<th>Cumulative Volume</th>
+</tr>
+<tr>
+<td>01</td>
+<td>9:30 AM</td>
+<td>400</td>
+<td>400</td>
+<td>62.20</td>
+<td>400</td>
+<td>400</td>
+</tr>
+<tr>
+<td>02</td>
+<td>10.30 AM</td>
+<td>500</td>
+<td>500</td>
+<td>62.75</td>
+<td>500</td>
+<td>900</td>
+</tr>
+<tr>
+<td>03</td>
+<td>11:30 AM</td>
+<td>350</td>
+<td>350</td>
+<td>63.10</td>
+<td>350</td>
+<td>1,250</td>
+</tr>
+<tr>
+<td>04</td>
+<td>12:30 PM</td>
+<td>150</td>
+<td>150</td>
+<td>63.50</td>
+<td>150</td>
+<td>1,400</td>
+</tr>
+<tr>
+<td>05</td>
+<td>1:30 PM</td>
+<td>625</td>
+<td>625</td>
+<td>63.75</td>
+<td>625</td>
+<td>2,025</td>
+</tr>
+<tr>
+<td>06</td>
+<td>2:30 PM</td>
+<td>475</td>
+<td>475</td>
+<td>64.20</td>
+<td>475</td>
+<td>2,500</td>
+</tr>
+<tr>
+<td>07</td>
+<td>3:30 PM</td>
+<td>800</td>
+<td>800</td>
+<td>64.50</td>
+<td>800</td>
+<td>3,300</td>
+</tr>
+</tbody>
+</table>
+<p>At 9:30 AM there were 400 shares exchanged at the price of 62.20. An hour later, 500 shares were traded at 62.75. At 10:30 AM if you were to check the total volume for the day, it would be 900 (400 + 500). Likewise, 350 shares at 63.10 were traded at 11:30 AM, and upto 11:30 AM, the volume was 1,250 (400+500+350). So on, and so forth.</p>
+<p>Here is a screenshot from the live market highlighting the volumes for some of the shares. The screenshot was taken around 2:55 PM on 5<sup>th</sup> of August 2014.</p>
+<p><strong><img loading="lazy" class="aligncenter size-full wp-image-786" src="http://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch12-chart1.jpg" alt="M2-Ch12-chart1" width="639" height="220" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch12-chart1.jpg 639w, https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch12-chart1-300x103.jpg 300w" sizes="(max-width: 639px) 100vw, 639px" /></strong></p>
+<p>If you notice, the volume on Cummins India Limited is 12,72,737 shares. Likewise, the volume on Naukri (Info Edge India Limited) is 85,427 shares.</p>
+<p>The volume information that you see here is the cumulative volume. Meaning, at 2:55 PM, a total of 12,72,737 shares of Cummins were traded at various price points ranging from 634.90 (low) and 689.85 (high).</p>
+<p>With 35 minutes left for the markets to close, it is only logical to expect the volumes to increase (assuming traders continue to trade the stock for the rest of the day). In fact here is another screenshot taken at 3:30 PM for the same set of stocks with volume highlighted.</p>
+<p><strong><img loading="lazy" class="aligncenter size-full wp-image-787" src="http://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch12-chart2.jpg" alt="M2-Ch12-chart2" width="639" height="239" srcset="https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch12-chart2.jpg 639w, https://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch12-chart2-300x112.jpg 300w" sizes="(max-width: 639px) 100vw, 639px" /></strong></p>
+<p>As you can see, the volume for Cummins India Limited has increased from 12,72,737 to 13,49,736. Therefore, for Cummins India, the volume for the day is 13,49,736 shares. The volume for Naukri has increased from 85,427 to 86,712, making 86,712 shares as the volume for the day. You need to note that the volumes shown here are cumulative.</p>
+<h2>12.1 – The volume trend table</h2>
+<p>Volume information on its own is quite useless. For example, we know that the volumes on Cummins India are 13,49,736 shares. So how useful is this information when read in isolation? If you think about it, it has no merit and hence would actually mean nothing. However, when you associate today’s volume information with the preceding price and volume trend, volume information becomes more meaningful.</p>
+<p>In the table below, you will find a summary of how to use volume information:</p>
+<table class="table table-dark">
+<tbody>
+<tr>
+<th>Sl No</th>
+<th>Price</th>
+<th>Volume</th>
+<th>What is the expectation?</th>
+</tr>
+<tr>
+<td>01</td>
+<td>Increases</td>
+<td>Increases</td>
+<td>Bullish</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Increases</td>
+<td>Decreases</td>
+<td>Caution &#8211; weak hands buying</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Decreases</td>
+<td>Increases</td>
+<td>Bearish</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Decreases</td>
+<td>Decreases</td>
+<td>Caution &#8211; weak hands selling</td>
+</tr>
+</tbody>
+</table>
+<p>The first line in the table above says, when the price increases along with an increase in volume, the expectation is bullish.</p>
+<p>Before we understand the table above in detail, think about this – we are talking about an ‘increase in the volume’. What does this actually mean? What is the reference point?  Should it be an increase over the previous day’s volume number or the previous week’s aggregate volume?</p>
+<p>As a practice, traders usually compare today’s volume over the average of the last 10 days volume. Generally, the rule of thumb is as follows:</p>
+<p>High Volume = Today’s volume &gt; last 10 days average volume<br />
+Low Volume = Today’s volume &lt; last 10 days average volume<br />
+Average Volume = Today’s volume = last 10 days average volume</p>
+<p>To get the last 10-day average, all you need to do is draw a moving average line on the volume bars, and the job is done. Of course, we will discuss moving averages in the next chapter.</p>
+<p><strong><img loading="lazy" class="aligncenter size-full wp-image-788" src="http://zerodha.com/varsity/wp-content/uploads/2014/10/M2-Ch12-chart3.jpg" alt="M2-Ch12-chart3" width="606" height="225" /></strong></p>
+<p>In the chart above, you can see that volumes are represented by blue bars (at the bottom of the chart). The red line overlaid on the volume bars indicates the 10-day average. As you notice, all the volume bars that are over and above the 10-day average can be considered as the increased volume where some institutional activity (or large participation) has taken place.</p>
+<p>Keeping this in perspective, I would suggest you now look at the volume – price table.</p>
+<h2>12.2 – The thought process behind the volume trend table</h2>
+<p>When institutional investors buy or sell, they obviously do not transact in small chunks. For example, think about India&#8217;s LIC; they are one of India&#8217;s biggest domestic institutional investors. If they would buy shares of Cummins India, would you think they would buy 500 shares? Obviously not, they would probably buy 500,000 shares or even more. If they were to buy 500,000 shares from the open market, it would start reflecting in volumes. Besides, because they are buying a large chunk of shares, the share price also tends to go up. Usually, institutional money is referred to as “smart money”. It is perceived that ‘smart money’ always makes wiser moves in the market than retail traders. Hence following the smart money seems like a wise idea.</p>
+<p>If both the price and the volume are increasing this only means one thing – a big player is showing interest in the stock. Going by the assumption that smart money always makes smart choices, the expectation turns bullish, and hence one should look at buying opportunity in the stock.</p>
+<p>Or as a corollary, whenever you decide to buy, ensure that the volumes are substantial. This means that you are buying along with the smart money.</p>
+<p>This is exactly what the <strong>1st row</strong> in the volume trend table indicates – expectation turns bullish when both the price and volume increases.</p>
+<p>What do you think happens when the price increases but the volume decreases as indicated in the <strong>2<sup>nd</sup> row</strong>?</p>
+<p>Think about it on the following terms:</p>
+<ol>
+<li>Why is the price increasing?
+<ol type="a">
+<li>Because market participants are buying</li>
+</ol>
+</li>
+<li>Are there any institutional buyers associated with the price increase?
+<ol type="a">
+<li>Not likely</li>
+</ol>
+</li>
+<li>How would you know that there is no meaningful purchase by institutional investors?
+<ol type="a">
+<li>Simple, if they were buying, then the volumes would have increased and not decrease.</li>
+</ol>
+</li>
+<li>So what does a price increase, associated by decreasing volumes indicate?
+<ol type="a">
+<li>It means the price is increasing because of small retail participation and not really influential buying. Hence it would help if you were cautious as this could be a possible bull trap.</li>
+</ol>
+</li>
+</ol>
+<p>Going forward, the <strong>3rd row</strong> says, a decrease in price along with an increase in volume sets a bearish expectation. Why do you think so?</p>
+<p>A price decrease indicates that market participants are selling the stock. Increase in volumes indicates the presence of smart money. Both events occurring together (decrease in price + increase in volumes) imply that smart money is selling stocks. Going by the assumption that smart money always makes smart choices, the expectation is bearish, and hence one should look at selling opportunity in the stock.</p>
+<p>Or as a corollary, whenever you decide to sell, ensure that the volumes are good. This means that you too, are selling, along with the smart money.</p>
+<p>Moving forward, what do you think happens when both volume and price decrease as indicated in the <strong>4<sup>th</sup> row</strong>?</p>
+<p>Think about it in on following terms:</p>
+<ol>
+<li>Why is the price decreasing?
+<ol type="a">
+<li>Because market participants are selling.</li>
+</ol>
+</li>
+<li>Are there any institutional sellers associated with the price decrease?
+<ol type="a">
+<li>Not likely</li>
+</ol>
+</li>
+<li>How would you know that there are no meaningful sell orders by institutional investors?
+<ol type="a">
+<li>Simple, if they were selling, then the volume would increase and not decrease.</li>
+</ol>
+</li>
+<li>So how would you infer a decline in price and a decline in volume?
+<ol type="a">
+<li>It means the price decreases because of small retail participation, and not really influential (read as smart money) selling. Hence it would help if you were cautious as this could be a possible bear trap.</li>
+</ol>
+</li>
+</ol>
+<h2>12.3 – Revisiting the checklist</h2>
+<p>Let us revisit the checklist and evaluate from the perspective of the volume. Imagine this hypothetical technical situation in a stock:</p>
+<ol>
+<li>The occurrence of a bullish engulfing pattern – this suggests a long trade for reasons discussed previously</li>
+<li>A support level around the low of bullish engulfing – support indicates demand. Therefore the occurrence of a bullish engulfing pattern near the support area suggests there is indeed a strong demand for the stock, and hence the trader can look at buying the stock.
+<ol type="a">
+<li>With a recognizable candlestick pattern and support near the stoploss, the trader gets a double confirmation to go long.</li>
+</ol>
+</li>
+</ol>
+<p>Now along with support near the low, imagine high volumes on the 2<sup>nd</sup> day of the bullish engulfing pattern, i.e. on P2 (blue candle). What can you infer from this?</p>
+<p>The inference is quite clear – high volumes and a price increase confirm that large, influential market participants are positioning themselves to buy the stock.</p>
+<p>With all three independent variables, i.e. candlesticks, S&amp;R, and volumes, suggest taking the same action, i.e. to go long. If you realize this is a triple confirmation!</p>
+<p>I want to drive across the fact that volumes are compelling as it helps the trader confirm a trade. For this reason, it is an important factor and therefore, must be included in the checklist.</p>
+<p>Here is how the updated checklist now stands:</p>
+<ol>
+<li>The stock should form a recognizable candlestick pattern</li>
+<li>S&amp;R should confirm the trade. The stoploss price should be around S&amp;R
+<ol type="a">
+<li>For a long trade, the low of the pattern should be around the support</li>
+<li>For a short trade, the high of the pattern should be around the resistance</li>
+</ol>
+</li>
+<li>Volumes should confirm to the trade
+<ol type="a">
+<li>Presence of above average volumes on both buy and sell day</li>
+<li>Low volumes are not encouraging and hence do feel free to hesitate to take a trade where the volumes are low</li>
+</ol>
+</li>
+</ol>
+<hr />
+{%endblock%}

@@ -1,0 +1,84 @@
+{% extends 'base2.html'%}
+{%block title %}LEARN TRADING{%endblock%}
+{%block css %}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+{%endblock%}
+{%block body %} 
+<h1 style="margin-top: 15px;text-align:center; color:yellow; font-family: Times New Roman, Times, serif; font-weight: bold;">Stock Market & Financial Education<h1>
+<div class="card mb-5 mt-3 mx-5" style='background-color: #DCDCDC; font-size:20px;'>
+  <div class="card-header" style="text-align:center; font-family: Times New Roman, Times, serif; font-weight: bold; font-size:30px;">
+    INTRODUCTION TO STOCK MARKET
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">7 chapters</h5>
+    <p class="card-text" style="font-size:15px;">Investing ensures financial security, and the Stock market plays a pivotal role in this domain,it is a place where people buy/sell shares of publicly listed companies. <br>In this module, you will learn about the fundamentals of the stock market, how to get started, how it functions and the various intermediaries that appertain it.</p>
+    <a href="/intro_stock_market">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+  </div>
+</div>
+
+<div class="card mb-5 mx-5" style='background-color: #DCDCDC; font-size:20px;'>
+  <div class="card-header" style="text-align:center; font-family: Times New Roman, Times, serif; font-weight: bold; font-size:30px;">
+    FUNDAMENTAL ANALYSIS
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">8 chapters</h5>
+    <p class="card-text" style="font-size:15px;">Technical Analysis (TA) plays an important role in developing a point of view. Like every other research, TA also has its own attributes. <br>In this module, we will discover all those complex attributes of TA, study various patterns, indicators and theories that will help you as<br> a trader to find upright trading opportunities in the market.</p>
+    <a href="/fundamental_analysis">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+  </div>
+</div>
+
+<div class="card mb-5 mx-5" style='background-color: #DCDCDC; font-size:20px;'>
+  <div class="card-header" style="text-align:center; font-family: Times New Roman, Times, serif; font-weight: bold; font-size:30px;">
+    TECHNICAL ANALYSIS
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">13 chapters</h5>
+    <p class="card-text" style="font-size:15px;">Fundamental Analysis (FA) is a holistic approach to study a business. If you are an investor that is looking for long term investments this module <br>will help you understand Equity research, help you in reading the financial statements, annual reports, calculation of Financial Ratio, Analysis <br>and most importantly help you in evaluating the intrinsic value of a stock to find long-term investing opportunities.</p>
+    <a href="/technical_analysis">
+    <button class="button" style="vertical-align:middle"><span>Start Learning  </span></button>
+    </a>
+  </div>
+</div>
+{%endblock%}
